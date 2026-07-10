@@ -30,29 +30,32 @@ const readingTimes = new Map(
 );
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en', {
+  new Intl.DateTimeFormat('es', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
   }).format(date);
 
-const pageTitle = page.currentPage === 1 ? 'Blog' : `Blog · Page ${page.currentPage}`;
+const pageTitle = page.currentPage === 1 ? 'Blog' : `Blog · Página ${page.currentPage}`;
 ---
 
-<BaseLayout title={pageTitle} description="Notes and writing — Astro Keel, a minimal portfolio and blog theme for Astro.">
+<BaseLayout
+  title={pageTitle}
+  description="Artículos sobre cloud, automatización, continuidad e infraestructura."
+>
   <section class="page-head section">
     <p class="eyebrow">Blog</p>
-    <h1>Notes, essays, and release logs.</h1>
+    <h1>Artículos, notas técnicas y aprendizaje aplicado.</h1>
     <p class="lead">
-      The blog collection supports tags, descriptions, draft filtering, publish dates,
-      and optional hero images.
+      Escribo sobre decisiones de infraestructura, automatización, operación y casos
+      reales que suelen aparecer en pymes y equipos técnicos pequeños.
     </p>
   </section>
 
-  <section class="section content-index" aria-label="Blog posts">
+  <section class="section content-index" aria-label="Entradas del blog">
     <div class="index-sidebar">
-      <p class="eyebrow">Tags</p>
-      <nav class="tag-cloud" aria-label="Blog tags">
+      <p class="eyebrow">Temas</p>
+      <nav class="tag-cloud" aria-label="Etiquetas del blog">
         {allTags.map((tag) => <a href={withBase(`/blog/tags/${tag}/`)}>{tag}</a>)}
       </nav>
     </div>

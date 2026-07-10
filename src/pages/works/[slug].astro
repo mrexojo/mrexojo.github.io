@@ -13,7 +13,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en', {
+  new Intl.DateTimeFormat('es', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
@@ -28,7 +28,7 @@ const formatDate = (date: Date) =>
 >
   <article data-pagefind-body>
     <header class="page-head section article-head">
-      <p class="eyebrow">Work</p>
+      <p class="eyebrow">Servicio</p>
       <h1>{entry.data.title}</h1>
       <p class="lead">{entry.data.description}</p>
       <div class="entry-meta">
@@ -36,8 +36,8 @@ const formatDate = (date: Date) =>
         <span>{entry.data.tech.join(' / ')}</span>
       </div>
       <div class="action-row">
-        {entry.data.link && <a class="button" href={entry.data.link}>Visit project</a>}
-        {entry.data.repo && <a class="text-link" href={entry.data.repo}>View repository</a>}
+        {entry.data.link && <a class="button" href={entry.data.link}>Abrir enlace</a>}
+        {entry.data.repo && <a class="text-link" href={entry.data.repo}>Ver repositorio</a>}
       </div>
       {
         entry.data.thumbnail && (
@@ -54,7 +54,7 @@ const formatDate = (date: Date) =>
 
     <div class="section article-layout">
       <aside class="article-toc">
-        <p class="eyebrow">Stack</p>
+        <p class="eyebrow">Tecnologías</p>
         <ul class="tech-list">
           {entry.data.tech.map((item) => <li>{item}</li>)}
         </ul>

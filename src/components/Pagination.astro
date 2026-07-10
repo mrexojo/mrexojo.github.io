@@ -19,12 +19,12 @@ const next = withSlash(page.url.next);
 
 {
   page.lastPage > 1 && (
-    <nav class="pagination" aria-label="Pagination">
-      {prev ? <a href={prev} rel="prev">← Newer</a> : <span aria-hidden="true" />}
+    <nav class="pagination" aria-label="Paginación">
+      {prev ? <a href={prev} rel="prev">← Más recientes</a> : <span aria-hidden="true" />}
       <span class="pagination-status">
-        Page {page.currentPage} of {page.lastPage}
+        Página {page.currentPage} de {page.lastPage}
       </span>
-      {next ? <a href={next} rel="next">Older →</a> : <span aria-hidden="true" />}
+      {next ? <a href={next} rel="next">Más antiguos →</a> : <span aria-hidden="true" />}
     </nav>
   )
 }
