@@ -1575,9 +1575,23 @@
                             <h3>Book intro call.</h3>
                             <p>30 minutes to review scope, constraints, and fit. If project makes sense, next step is clear.</p>
                             <div class="cal-actions">
-                                <a href="#" data-open-cal class="cal-link cal-link-primary">
-                                    <i class="fa-solid fa-calendar"></i> Open calendar
-                                </a>
+                                <!-- Embedded Google Calendar Scheduling Button -->
+                                <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                                <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                                <script>
+                                (function() {
+                                    var target = document.currentScript;
+                                    window.addEventListener('load', function() {
+                                        calendar.schedulingButton.load({
+                                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1G9_RkCSFehT2I-96BKFTDmvF1c5RfB2jlGxyfmcG3JboZT_ftvIH4nD4izfE7dpTTuBJZl0dR?gv=true',
+                                            color: '#EF6C00',
+                                            label: 'Book an appointment',
+                                            target,
+                                        });
+                                    });
+                                })();
+                                </script>
+
                                 <a href="mailto:hello@mrexojo.com" class="cal-link cal-link-secondary">
                                     <i class="fa-solid fa-envelope"></i> Email instead
                                 </a>
