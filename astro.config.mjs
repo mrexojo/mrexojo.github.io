@@ -6,11 +6,7 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  // Change to your deployed URL. Used for sitemap, canonical, and RSS links.
-  // For a GitHub Pages project site, `site` is the user/org domain and `base`
-  // is the repository name. Drop `base` (or set it to '/') for a custom domain
-  // or a `<user>.github.io` root site.
-  site: 'https://mrexojo.github.io',
+  site: 'https://mrexojo.com',
   integrations: [mdx(), sitemap()],
   markdown: {
     remarkPlugins: [remarkReadingTime],

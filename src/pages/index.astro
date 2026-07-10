@@ -17,7 +17,7 @@ const posts = (await getCollection('blog'))
   .slice(0, 3);
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en', {
+  new Intl.DateTimeFormat('es', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
@@ -25,49 +25,49 @@ const formatDate = (date: Date) =>
 ---
 
 <BaseLayout
-  title="Astro Keel"
-  description="A minimal portfolio and writing theme for careful technical work."
+  title="Miguel Ramírez Exojo"
+  description="Cloud, DevOps e infraestructura para pymes industriales y empresas IT que necesitan apoyo técnico avanzado."
 >
   <section class="hero section">
-    <p class="eyebrow">Portfolio / writing / systems notes</p>
-    <h1>Structural minimalism for careful digital work.</h1>
+    <p class="eyebrow">Cloud / DevOps / SRE</p>
+    <h1>Infraestructura clara para pymes industriales y partners IT.</h1>
     <p class="lead">
-      Astro Keel gives projects, essays, and professional notes a disciplined frame:
-      editorial type, measured rhythm, and a single accent carried through fine structural
-      rules.
+      Diseño y operación de entornos cloud, automatización, continuidad y soporte
+      técnico avanzado. Trabajo con equipos que necesitan resolver infraestructura,
+      reducir fricción operativa y mantener sistemas fiables sin complicar el día a día.
     </p>
-    <div class="action-row" aria-label="Primary links">
-      <a class="button" href={withBase('/works/')}>View works</a>
-      <a class="text-link" href={withBase('/blog/')}>Read notes</a>
+    <div class="action-row" aria-label="Enlaces principales">
+      <a class="button" href={withBase('/works/')}>Ver servicios</a>
+      <a class="text-link" href={withBase('/blog/')}>Leer artículos</a>
     </div>
   </section>
 
-  <section class="section split-overview" aria-label="Theme overview">
+  <section class="section split-overview" aria-label="Resumen de servicios">
     <div>
-      <p class="eyebrow">Principles</p>
-      <h2>Readable first, decorative last.</h2>
+      <p class="eyebrow">Qué hago</p>
+      <h2>Tecnología útil, estable y entendible.</h2>
     </div>
     <div class="feature-list">
       <article>
-        <h3>Baseline rhythm</h3>
-        <p>Vertical spacing follows a steady cadence for long-form reading.</p>
+        <h3>Cloud gestionado</h3>
+        <p>Migración, operación y optimización de entornos para reducir coste y riesgo.</p>
       </article>
       <article>
-        <h3>Typed content</h3>
-        <p>Collections are prepared for project case studies and durable notes.</p>
+        <h3>Automatización</h3>
+        <p>Infraestructura como código, flujos repetibles y menos trabajo manual.</p>
       </article>
       <article>
-        <h3>Keel lines</h3>
-        <p>Fine rules create structure without relying on decorative effects.</p>
+        <h3>Continuidad</h3>
+        <p>Backups, replicación, acceso remoto seguro y recuperación pensada para operar.</p>
       </article>
     </div>
   </section>
 
   <section class="section index-feed" aria-labelledby="latest-works">
     <div class="section-heading">
-      <p class="eyebrow">Latest works</p>
-      <h2 id="latest-works">Built records.</h2>
-      <a class="text-link" href={withBase('/works/')}>All works</a>
+      <p class="eyebrow">Servicios</p>
+      <h2 id="latest-works">Áreas de trabajo.</h2>
+      <a class="text-link" href={withBase('/works/')}>Todos los servicios</a>
     </div>
 
     {
@@ -91,7 +91,7 @@ const formatDate = (date: Date) =>
                 </h3>
                 <p>{work.data.description}</p>
                 {work.data.tech.length > 0 && (
-                  <ul class="tag-list" aria-label={`${work.data.title} technology`}>
+                  <ul class="tag-list" aria-label={`Tecnologías de ${work.data.title}`}>
                     {work.data.tech.slice(0, 4).map((tech) => (
                       <li>{tech}</li>
                     ))}
@@ -103,7 +103,7 @@ const formatDate = (date: Date) =>
         </div>
       ) : (
         <div class="empty-state compact">
-          <p>Add works under <code>src/content/works</code> to surface the latest projects here.</p>
+          <p>Añade servicios en <code>src/content/works</code> para mostrarlos aquí.</p>
         </div>
       )
     }
@@ -111,9 +111,9 @@ const formatDate = (date: Date) =>
 
   <section class="section index-feed" aria-labelledby="latest-notes">
     <div class="section-heading">
-      <p class="eyebrow">Latest blog</p>
-      <h2 id="latest-notes">Field notes.</h2>
-      <a class="text-link" href={withBase('/blog/')}>All posts</a>
+      <p class="eyebrow">Blog</p>
+      <h2 id="latest-notes">Notas técnicas.</h2>
+      <a class="text-link" href={withBase('/blog/')}>Todos los posts</a>
     </div>
 
     {
@@ -142,7 +142,7 @@ const formatDate = (date: Date) =>
         </div>
       ) : (
         <div class="empty-state compact">
-          <p>Add blog entries under <code>src/content/blog</code> to surface the latest notes here.</p>
+          <p>Añade entradas en <code>src/content/blog</code> para mostrarlas aquí.</p>
         </div>
       )
     }

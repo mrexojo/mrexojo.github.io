@@ -13,7 +13,7 @@ const { entry } = Astro.props;
 const { Content, headings, remarkPluginFrontmatter } = await render(entry);
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en', {
+  new Intl.DateTimeFormat('es', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
@@ -28,7 +28,7 @@ const formatDate = (date: Date) =>
 >
   <article data-pagefind-body>
     <header class="page-head section article-head">
-      <p class="eyebrow">Blog</p>
+      <p class="eyebrow">Artículo</p>
       <h1>{entry.data.title}</h1>
       <p class="lead">{entry.data.description}</p>
       <div class="entry-meta">
@@ -50,8 +50,8 @@ const formatDate = (date: Date) =>
     </header>
 
     <div class="section article-layout">
-      <aside class="article-toc" aria-label="Table of contents">
-        <p class="eyebrow">Contents</p>
+      <aside class="article-toc" aria-label="Índice del artículo">
+        <p class="eyebrow">Índice</p>
         <nav>
           {
             headings

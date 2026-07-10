@@ -40,7 +40,7 @@ const isActive = (href: string) => {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -74,11 +74,11 @@ const isActive = (href: string) => {
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={withBase('/')} aria-label={`${siteName} home`}>
+      <a class="brand" href={withBase('/')} aria-label={`Inicio de ${siteName}`}>
         <span class="brand-mark" aria-hidden="true"></span>
         <span>{siteName}</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
+      <nav class="site-nav" aria-label="Navegación principal">
         {
           NAV_ITEMS.map((item) => (
             <a href={withBase(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>
@@ -87,7 +87,7 @@ const isActive = (href: string) => {
           ))
         }
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema de color" data-theme-toggle>
         <span aria-hidden="true"></span>
       </button>
     </header>
@@ -98,7 +98,7 @@ const isActive = (href: string) => {
 
     <footer class="site-footer">
       <p>{SITE.footerText}</p>
-      <a href={withBase('/blog/')}>Notes</a>
+      <a href={withBase('/blog/')}>Blog</a>
     </footer>
 
     <script>
