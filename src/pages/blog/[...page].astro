@@ -30,32 +30,32 @@ const readingTimes = new Map(
 );
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('es', {
+  new Intl.DateTimeFormat('en', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
   }).format(date);
 
-const pageTitle = page.currentPage === 1 ? 'Blog' : `Blog · Página ${page.currentPage}`;
+const pageTitle = page.currentPage === 1 ? 'Blog' : `Blog · Page ${page.currentPage}`;
 ---
 
 <BaseLayout
   title={pageTitle}
-  description="Artículos sobre cloud, automatización, continuidad e infraestructura."
+  description="Articles on cloud, automation, continuity and infrastructure."
 >
   <section class="page-head section">
     <p class="eyebrow">Blog</p>
-    <h1>Artículos, notas técnicas y aprendizaje aplicado.</h1>
+    <h1>Articles, technical notes and applied learning.</h1>
     <p class="lead">
-      Escribo sobre decisiones de infraestructura, automatización, operación y casos
-      reales que suelen aparecer en pymes y equipos técnicos pequeños.
+      I write about infrastructure decisions, automation, operations and real cases
+      common in SMEs and small engineering teams.
     </p>
   </section>
 
-  <section class="section content-index" aria-label="Entradas del blog">
+  <section class="section content-index" aria-label="Blog entries">
     <div class="index-sidebar">
-      <p class="eyebrow">Temas</p>
-      <nav class="tag-cloud" aria-label="Etiquetas del blog">
+      <p class="eyebrow">Topics</p>
+      <nav class="tag-cloud" aria-label="Blog tags">
         {allTags.map((tag) => <a href={withBase(`/blog/tags/${tag}/`)}>{tag}</a>)}
       </nav>
     </div>

@@ -1,30 +1,30 @@
 ---
-title: "Apoyo DevOps y SRE para partners IT"
-description: "Refuerzo técnico para empresas IT que necesitan capacidad adicional en cloud, automatización o fiabilidad operativa."
+title: "DevOps & SRE Support for IT Partners"
+description: "Technical reinforcement for IT companies needing extra capacity in cloud, automation, or operational reliability."
 tech:
   - DevOps
   - SRE
   - Cloud
   - CI/CD
-  - Soporte avanzado
+  - Advanced support
 order: 4
 publishDate: 2026-07-04
 ---
 
-## Qué resuelvo
+## What I solve
 
-Hay proyectos donde el partner principal necesita apoyo experto durante una migración, una automatización compleja o una revisión de arquitectura. En esos casos aporto ejecución técnica y criterio sin romper la relación con cliente final.
+Some projects require expert support during migration, complex automation, or architecture reviews. In those cases I provide technical execution and judgement without disrupting client relationship.
 
-## Cómo trabajo
+## How I work
 
-Me integro en el contexto técnico existente, entiendo restricciones y colaboro con el equipo interno para acelerar tareas críticas, desbloquear decisiones o estabilizar una plataforma que está bajo presión.
+I integrate into existing technical context, understand constraints, and collaborate with internal team to accelerate critical tasks, unblock decisions, or stabilise pressured platform.
 
-## Qué busco conseguir
+## Goals
 
-- Más capacidad técnica sin sobredimensionar plantilla.
-- Mejor velocidad en proyectos complejos.
-- Transferencia de criterio y práctica al equipo que mantiene la cuenta.
+- More technical capacity without overstaffing.
+- Faster progress in complex projects.
+- Transfer of knowledge and practices to internal team.
 
-## Cuándo encaja
+## When it fits
 
-Encaja en integradores, consultoras y departamentos IT que necesitan apoyo puntual o recurrente en cloud, automatización, seguridad operativa o rendimiento de plataforma.
+Suitable for integrators, consultancies and IT departments needing ad-hoc or recurring support in cloud, automation, operational security, or platform performance.

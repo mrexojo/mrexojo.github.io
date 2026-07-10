@@ -17,7 +17,7 @@ const posts = (await getCollection('blog'))
   .slice(0, 3);
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('es', {
+  new Intl.DateTimeFormat('en', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
@@ -26,48 +26,47 @@ const formatDate = (date: Date) =>
 
 <BaseLayout
   title="Miguel Ramírez Exojo"
-  description="Cloud, DevOps e infraestructura para pymes industriales y empresas IT que necesitan apoyo técnico avanzado."
+  description="Cloud, DevOps and infrastructure for industrial SMEs and IT companies needing advanced technical support."
 >
   <section class="hero section">
     <p class="eyebrow">Cloud / DevOps / SRE</p>
-    <h1>Infraestructura clara para pymes industriales y partners IT.</h1>
+    <h1>Clear infrastructure for industrial SMEs and IT partners.</h1>
     <p class="lead">
-      Diseño y operación de entornos cloud, automatización, continuidad y soporte
-      técnico avanzado. Trabajo con equipos que necesitan resolver infraestructura,
-      reducir fricción operativa y mantener sistemas fiables sin complicar el día a día.
+      Design and operation of cloud platforms, automation, continuity, and advanced technical support. I work with teams solving infrastructure,
+      reducing operational friction, and keeping systems reliable without adding unnecessary complexity.
     </p>
-    <div class="action-row" aria-label="Enlaces principales">
-      <a class="button" href={withBase('/works/')}>Ver servicios</a>
-      <a class="text-link" href={withBase('/blog/')}>Leer artículos</a>
+    <div class="action-row" aria-label="Main links">
+      <a class="button" href={withBase('/works/')}>View services</a>
+      <a class="text-link" href={withBase('/blog/')}>Read articles</a>
     </div>
   </section>
 
-  <section class="section split-overview" aria-label="Resumen de servicios">
+  <section class="section split-overview" aria-label="Summary of services">
     <div>
-      <p class="eyebrow">Qué hago</p>
-      <h2>Tecnología útil, estable y entendible.</h2>
+      <p class="eyebrow">What I do</p>
+      <h2>Useful, stable, understandable technology.</h2>
     </div>
     <div class="feature-list">
       <article>
-        <h3>Cloud gestionado</h3>
-        <p>Migración, operación y optimización de entornos para reducir coste y riesgo.</p>
+        <h3>Managed cloud</h3>
+        <p>Migration, operation and optimization to reduce cost and risk.</p>
       </article>
       <article>
-        <h3>Automatización</h3>
-        <p>Infraestructura como código, flujos repetibles y menos trabajo manual.</p>
+        <h3>Automation</h3>
+        <p>Infrastructure as Code, repeatable flows and less manual work.</p>
       </article>
       <article>
-        <h3>Continuidad</h3>
-        <p>Backups, replicación, acceso remoto seguro y recuperación pensada para operar.</p>
+        <h3>Continuity</h3>
+        <p>Backups, replication, secure remote access and recovery designed for operations.</p>
       </article>
     </div>
   </section>
 
   <section class="section index-feed" aria-labelledby="latest-works">
     <div class="section-heading">
-      <p class="eyebrow">Servicios</p>
-      <h2 id="latest-works">Áreas de trabajo.</h2>
-      <a class="text-link" href={withBase('/works/')}>Todos los servicios</a>
+      <p class="eyebrow">Services</p>
+      <h2 id="latest-works">Areas of work.</h2>
+      <a class="text-link" href={withBase('/works/')}>All services</a>
     </div>
 
     {
@@ -91,7 +90,7 @@ const formatDate = (date: Date) =>
                 </h3>
                 <p>{work.data.description}</p>
                 {work.data.tech.length > 0 && (
-                  <ul class="tag-list" aria-label={`Tecnologías de ${work.data.title}`}>
+                  <ul class="tag-list" aria-label={`Technologies for ${work.data.title}`}>
                     {work.data.tech.slice(0, 4).map((tech) => (
                       <li>{tech}</li>
                     ))}
@@ -103,7 +102,7 @@ const formatDate = (date: Date) =>
         </div>
       ) : (
         <div class="empty-state compact">
-          <p>Añade servicios en <code>src/content/works</code> para mostrarlos aquí.</p>
+        <p>Add services in <code>src/content/works</code> to show them here.</p>
         </div>
       )
     }
@@ -112,8 +111,8 @@ const formatDate = (date: Date) =>
   <section class="section index-feed" aria-labelledby="latest-notes">
     <div class="section-heading">
       <p class="eyebrow">Blog</p>
-      <h2 id="latest-notes">Notas técnicas.</h2>
-      <a class="text-link" href={withBase('/blog/')}>Todos los posts</a>
+      <h2 id="latest-notes">Technical notes.</h2>
+      <a class="text-link" href={withBase('/blog/')}>All posts</a>
     </div>
 
     {
@@ -142,7 +141,7 @@ const formatDate = (date: Date) =>
         </div>
       ) : (
         <div class="empty-state compact">
-          <p>Añade entradas en <code>src/content/blog</code> para mostrarlas aquí.</p>
+          <p>Add posts in <code>src/content/blog</code> to show them here.</p>
         </div>
       )
     }

@@ -1,36 +1,36 @@
 ---
-title: "Backups, replicación y recuperación real: tres cosas distintas"
+title: "Backups, Replication and Real Recovery: Three Different Things"
 publishDate: 2026-07-06
 tags:
-  - seguridad
-  - continuidad
+  - security
+  - continuity
   - cloud
-description: "Tener copias no garantiza continuidad. La diferencia está en cómo se valida la recuperación."
+description: "Having copies doesn't guarantee continuity. Difference lies in how recovery is validated."
 draft: false
 ---
 
-## Copiar no es recuperar
+## Copying is not recovering
 
-Una copia puede existir y seguir sin resolver el problema principal: cuánto tardas en volver a operar. Por eso conviene separar tres conceptos que muchas veces se mezclan.
+A copy can exist and still not solve main problem: how long to resume operations. Separate three concepts often mixed.
 
 ## Backup
 
-El backup protege frente a borrados, corrupción o necesidad de recuperar un estado anterior. Su valor depende de la política de retención, del almacenamiento y de la facilidad para restaurar.
+Backup protects against deletions, corruption or need to restore a previous state. Value depends on retention policy, storage and ease of restoration.
 
-## Replicación
+## Replication
 
-La replicación busca reducir tiempo de caída, pero no sustituye una copia histórica. Si replicas un error o un borrado, el problema también viaja al destino.
+Replication reduces downtime but doesn't replace historical copies. If you replicate an error or deletion, problem also travels to destination.
 
-## Recuperación validada
+## Validated recovery
 
-La parte que más se olvida es probar de verdad. Una estrategia de continuidad necesita ejercicios de restauración, revisión de tiempos y validación de dependencias: credenciales, red, DNS, datos y acceso de usuarios.
+Most overlooked part is actually testing. Continuity strategy needs recovery exercises, timing review and dependency validation: credentials, network, DNS, data and user access.
 
-## Qué revisar primero
+## What to review first
 
-Empiezo siempre por tres preguntas:
+Start with three questions:
 
-- ¿Qué servicio no puede parar?
-- ¿Cuánto tiempo real puede estar caído?
-- ¿Quién ejecuta la recuperación y con qué pasos?
+- Which service cannot stop?
+- How much real downtime is acceptable?
+- Who performs recovery and with what steps?
 
-Responder eso suele aclarar si hace falta solo una mejor política de copias o una estrategia más amplia de continuidad.
+Answering these usually clarifies whether you need just better backup policy or broader continuity strategy.

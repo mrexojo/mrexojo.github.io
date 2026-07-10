@@ -1,6 +1,6 @@
 ---
-title: "Cloud gestionado y optimización de infraestructura"
-description: "Diseño, migración y operación de entornos cloud con foco en estabilidad, coste y capacidad de evolución."
+title: "Managed Cloud and Infrastructure Optimization"
+description: "Design, migration, and operation of cloud environments focused on stability, cost, and evolvability."
 tech:
   - AWS
   - GCP
@@ -11,20 +11,20 @@ order: 1
 publishDate: 2026-07-01
 ---
 
-## Qué resuelvo
+## What I solve
 
-Ayudo a mover cargas a cloud o a ordenar entornos ya existentes cuando el problema no es solo técnico, sino también operativo: costes poco claros, configuraciones inconsistentes o dependencia excesiva de tareas manuales.
+Help move workloads to cloud or bring order to existing environments when issues are operational as much as technical: unclear costs, inconsistent configurations, or excessive manual tasks.
 
-## Cómo trabajo
+## How I work
 
-Empiezo por el mapa real del entorno: servicios críticos, dependencias, puntos de fallo y costes. A partir de ahí defino una base repetible con infraestructura como código, criterios de despliegue y una operación que el equipo pueda mantener.
+Start with a real map of the environment: critical services, dependencies, failure points, and costs. From there, define a repeatable foundation with Infrastructure as Code, deployment criteria, and an operational model the team can maintain.
 
-## Qué busco conseguir
+## Goals
 
-- Menos sorpresas en factura y en operación.
-- Entornos más predecibles para crecer o cambiar.
-- Mejor tiempo de respuesta cuando aparece una incidencia.
+- Fewer surprises in bill and operations.
+- More predictable environments for growth or change.
+- Faster response when incidents occur.
 
-## Cuándo encaja
+## When it fits
 
-Este servicio suele encajar cuando una pyme necesita profesionalizar su infraestructura o cuando un equipo IT requiere apoyo puntual para una migración, una reorganización de cuentas o una base más sólida para seguir construyendo.
+Fits SMEs needing to professionalize infrastructure or IT teams requiring short-term support for migration, account reorganization, or a stronger foundation for future work.

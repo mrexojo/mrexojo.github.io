@@ -5,22 +5,21 @@ import { withBase } from '../lib/url';
 const bundlePath = withBase('/pagefind/');
 ---
 
-<BaseLayout title="Buscar" description="Busca artículos y servicios del sitio.">
+<BaseLayout title="Search" description="Search site articles and services.">
   <section class="page-head section">
-    <p class="eyebrow">Buscar</p>
-    <h1>Encuentra artículos y servicios.</h1>
+    <p class="eyebrow">Search</p>
+    <h1>Find articles and services.</h1>
     <p class="lead">
-      Búsqueda estática con Pagefind. El índice se genera al construir el sitio, sin
-      backend adicional.
+      Static search with Pagefind. Index generated at build time, no extra backend required.
     </p>
   </section>
 
-  <section class="section search-section" aria-label="Buscador del sitio">
+  <section class="section search-section" aria-label="Site search">
     <link rel="stylesheet" href={`${bundlePath}pagefind-ui.css`} />
     <div id="search">
       <p class="search-fallback">
-        El índice se genera en build. Ejecuta <code>npm run build</code> y abre la
-        versión compilada para probarlo; no está disponible en el servidor de desarrollo.
+        Index generated at build. Run <code>npm run build</code> and open compiled
+        version to test; not available on dev server.
       </p>
     </div>
     <script is:inline define:vars={{ bundlePath }}>

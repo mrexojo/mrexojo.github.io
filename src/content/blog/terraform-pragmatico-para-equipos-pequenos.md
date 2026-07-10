@@ -1,31 +1,31 @@
 ---
-title: "Terraform pragmático para equipos pequeños"
+title: "Pragmatic Terraform for Small Teams"
 publishDate: 2026-07-07
 tags:
   - terraform
-  - automatizacion
+  - automation
   - devops
-description: "Cómo usar infraestructura como código sin convertirla en otra fuente de complejidad."
+description: "How to use Infrastructure as Code without turning it into another source of complexity."
 draft: false
 ---
 
-## El error habitual
+## Common mistake
 
-Muchas implementaciones de Terraform fallan por exceso. Se intenta modelar todo desde el principio, con demasiadas abstracciones y módulos difíciles de mantener por el equipo que luego los opera.
+Many Terraform implementations fail through excess. Teams try to model everything from day one, creating abstractions and modules hard for operators to maintain.
 
-## Qué sí funciona
+## What works
 
-Terraform funciona mejor cuando define lo importante y deja claro el ciclo de cambio:
+Terraform works best when it defines what matters and clarifies change lifecycle:
 
-- Qué recursos se gestionan.
-- Cómo se organizan estados y entornos.
-- Qué variables realmente merecen existir.
-- Qué validaciones evitan errores comunes.
+- Which resources are managed.
+- How states and environments are organized.
+- Which variables truly deserve to exist.
+- Which validations prevent common mistakes.
 
-## Menos magia, más claridad
+## Less magic, more clarity
 
-Prefiero una base explícita y fácil de leer antes que un sistema muy genérico que nadie quiere tocar. La infraestructura como código tiene sentido cuando ayuda a repetir cambios con seguridad y deja trazabilidad útil.
+Prefer explicit, easy-to-read foundation over a highly generic system nobody wants to touch. IaC makes sense when it enables safe, repeatable changes and provides useful traceability.
 
-## Cuándo modular
+## When to modularize
 
-Un módulo merece la pena cuando el patrón se repite y tiene una interfaz clara. Si todavía estás descubriendo cómo debe ser la plataforma, a veces es mejor esperar un poco antes de encapsular demasiado.
+A module pays off when a pattern repeats and exposes a clear interface. If platform shape still evolving, sometimes wait before over-encapsulating.

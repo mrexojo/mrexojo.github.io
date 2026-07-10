@@ -33,7 +33,7 @@ const readingTimes = new Map(
 );
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('es', {
+  new Intl.DateTimeFormat('en', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
@@ -41,22 +41,22 @@ const formatDate = (date: Date) =>
 
 const pageTitle =
   page.currentPage === 1
-    ? `Posts con etiqueta “${tag}”`
-    : `Posts con etiqueta “${tag}” · Página ${page.currentPage}`;
+    ? `Posts tagged “${tag}”`
+    : `Posts tagged “${tag}” · Page ${page.currentPage}`;
 ---
 
-<BaseLayout title={pageTitle} description={`Artículos del blog etiquetados como ${tag}.`}>
+<BaseLayout title={pageTitle} description={`Blog posts tagged ${tag}.`}>
   <section class="page-head section">
-    <p class="eyebrow">Etiqueta</p>
+    <p class="eyebrow">Tag</p>
     <h1>{tag}</h1>
-    <p class="lead">Entradas relacionadas con {tag}.</p>
+    <p class="lead">Posts related to {tag}.</p>
   </section>
 
-  <section class="section content-index" aria-label={`Posts de ${tag}`}>
+  <section class="section content-index" aria-label={`Posts for ${tag}`}>
     <div class="index-sidebar">
-      <p class="eyebrow">Más temas</p>
-      <nav class="tag-cloud" aria-label="Otras etiquetas del blog">
-        <a href={withBase('/blog/')}>Todos los posts</a>
+      <p class="eyebrow">More topics</p>
+      <nav class="tag-cloud" aria-label="Other blog tags">
+        <a href={withBase('/blog/')}>All posts</a>
         {otherTags.map((item) => <a href={withBase(`/blog/tags/${item}/`)}>{item}</a>)}
       </nav>
     </div>

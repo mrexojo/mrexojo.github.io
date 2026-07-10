@@ -1,6 +1,6 @@
 ---
-title: "Automatización e infraestructura como código"
-description: "Automatización de despliegues, flujos operativos y entornos repetibles para reducir trabajo manual y errores."
+title: "Automation and Infrastructure as Code"
+description: "Deployment automation, operational flows and repeatable environments to reduce manual work and errors."
 tech:
   - Terraform
   - Ansible
@@ -11,20 +11,20 @@ order: 2
 publishDate: 2026-07-02
 ---
 
-## Qué resuelvo
+## What I solve
 
-Cuando cada cambio depende de pasos manuales, personas concretas o documentación dispersa, el sistema deja de escalar. Automatizar no es solo desplegar más rápido; es reducir dependencia operativa y ganar trazabilidad.
+When every change depends on manual steps, specific people, or scattered docs, system stops scaling. Automation not only speeds deploys; it reduces operational dependency and adds traceability.
 
-## Cómo trabajo
+## How I work
 
-Defino plantillas, pipelines y tareas repetibles con el nivel de detalle necesario para que el equipo pueda reproducir cambios sin improvisar. El objetivo es que operar sea más simple, no más frágil.
+Define templates, pipelines and repeatable tasks at the right level of detail so team can reproduce changes without improvising. Goal: make operation simpler, not more fragile.
 
-## Qué busco conseguir
+## Goals
 
-- Menos errores en cambios recurrentes.
-- Más velocidad para crear o actualizar entornos.
-- Mejor transferencia de conocimiento entre equipos.
+- Fewer errors on recurring changes.
+- Faster creation or update of environments.
+- Better knowledge transfer between teams.
 
-## Cuándo encaja
+## When it fits
 
-Este tipo de trabajo encaja bien en equipos pequeños, plataformas que han crecido deprisa o compañías que ya usan cloud pero aún no han convertido su infraestructura en un sistema realmente mantenible.
+Fits small teams, rapidly grown platforms or companies using cloud but lacking a maintainable infra-as-code system.

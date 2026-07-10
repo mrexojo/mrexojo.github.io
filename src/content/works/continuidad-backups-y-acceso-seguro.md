@@ -1,30 +1,30 @@
 ---
-title: "Continuidad, backups y acceso seguro"
-description: "Estrategias de copia, replicación, recuperación y acceso remoto seguro pensadas para operar sin sobresaltos."
+title: "Continuity, Backups and Secure Access"
+description: "Backup, replication, recovery and secure remote access strategies designed for real-world operations."
 tech:
   - Backups
-  - Replicación
-  - Seguridad
-  - Escritorio remoto
-  - Monitorización
+  - Replication
+  - Security
+  - Remote desktop
+  - Monitoring
 order: 3
 publishDate: 2026-07-03
 ---
 
-## Qué resuelvo
+## What I solve
 
-Muchas organizaciones descubren demasiado tarde que tener copias no es lo mismo que poder recuperar. La continuidad exige revisar restauración, tiempos de respuesta, accesos y dependencia de infraestructura concreta.
+Many organizations discover too late that having copies is not the same as being able to recover. Continuity requires reviewing restoration, recovery times, access and infrastructure dependencies.
 
-## Cómo trabajo
+## How I work
 
-Planteo una combinación de backups, replicación y validación periódica de recuperación. Cuando hace falta acceso remoto, priorizo soluciones seguras y sencillas de operar para no añadir nuevos riesgos a la plataforma.
+I design combination of backups, replication and periodic recovery validation. When remote access needed, prefer secure, operationally simple solutions to avoid adding new platform risks.
 
-## Qué busco conseguir
+## Goals
 
-- Reducir tiempo de parada ante fallos.
-- Asegurar que recuperación y acceso remoto sean utilizables.
-- Mantener un nivel de seguridad razonable sin volver el sistema inmanejable.
+- Reduce downtime during failures.
+- Ensure recovery and remote access are usable.
+- Keep security reasonable without making system unmanageable.
 
-## Cuándo encaja
+## When it fits
 
-Es especialmente útil en pymes con operaciones críticas, equipos distribuidos o servicios que no pueden permitirse parar por una incidencia evitable.
+Especially useful for SMEs with critical operations, distributed teams or services that cannot afford avoidable downtime.

@@ -1,31 +1,31 @@
 ---
-title: "Escritorio remoto seguro sin complicar la operación"
+title: "Secure Remote Desktop Without Complicating Operations"
 publishDate: 2026-07-08
 tags:
-  - seguridad
-  - acceso-remoto
-  - pymes
-description: "Buenas prácticas para ofrecer acceso remoto útil y razonablemente seguro en equipos distribuidos."
+  - security
+  - remote-access
+  - smes
+description: "Best practices to provide useful, reasonably secure remote access for distributed teams."
 draft: false
 ---
 
-## Acceso remoto no es solo abrir una puerta
+## Remote access is not just opening a door
 
-Cuando un equipo necesita entrar desde fuera, la solución rápida suele ser la más peligrosa. Abrir acceso sin revisar identidad, trazabilidad o dependencia de dispositivos concretos suele crear deuda de seguridad desde el primer día.
+Quick fixes for external access are often the most dangerous. Opening access without reviewing identity, traceability or device dependencies creates security debt from day one.
 
-## Qué conviene priorizar
+## What to prioritise
 
-Un acceso remoto razonable debería cubrir al menos esto:
+Reasonable remote access should cover at least:
 
-- Identidad fuerte y control de permisos.
-- Registros claros de quién entra y cuándo.
-- Segmentación para no exponer más de lo necesario.
-- Operación simple para que la gente no busque atajos.
+- Strong identity and permission control.
+- Clear logs of who accesses and when.
+- Segmentation to avoid overexposure.
+- Simple operation so teams don't seek shortcuts.
 
-## El equilibrio importante
+## Important balance
 
-La seguridad que nadie usa termina rodeada por soluciones improvisadas. Por eso el objetivo no es añadir capas por añadir, sino construir un acceso que el equipo pueda usar con normalidad y que soporte auditoría, soporte y continuidad.
+Security nobody uses ends up bypassed by improvised solutions. Goal: build access teams can use normally while supporting auditability, support and continuity.
 
-## Dónde suele estar la mejora real
+## Where real improvement usually lies
 
-En muchos entornos la mejora no viene por cambiar toda la tecnología, sino por revisar permisos, endurecer accesos existentes y documentar correctamente el flujo de entrada y salida.
+Often improvement isn't swapping tech, but reviewing permissions, hardening existing access and documenting entry/exit flows.

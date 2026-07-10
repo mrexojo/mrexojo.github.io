@@ -1,31 +1,31 @@
 ---
-title: "Cuándo tiene sentido pasar a cloud gestionado en una pyme industrial"
+title: "When it makes sense to move to managed cloud for an industrial SME"
 publishDate: 2026-07-05
 tags:
   - cloud
-  - pymes
-  - operaciones
-description: "Señales prácticas para saber si una pyme ya necesita profesionalizar su infraestructura cloud."
+  - smes
+  - operations
+description: "Practical signals to know when an SME should professionalize its cloud infrastructure."
 draft: false
 ---
 
-## El problema no suele empezar por la tecnología
+## Problem rarely starts with technology
 
-Muchas pymes no llegan a cloud por estrategia, sino por acumulación. Aparece una nueva aplicación, un proveedor exige más capacidad o el acceso remoto deja de ser opcional. El entorno crece rápido y nadie revisa si sigue siendo mantenible.
+Many SMEs reach cloud by accumulation, not strategy. New app appears, vendor demands more capacity or remote access becomes required. Environment grows fast and no one checks maintainability.
 
-## Señales claras
+## Clear signals
 
-Hay varias señales que suelen repetirse:
+Common signs:
 
-- No está claro cuánto cuesta cada parte del sistema.
-- Cambiar algo pequeño genera demasiado riesgo.
-- La documentación no refleja el estado real del entorno.
-- El acceso depende de personas concretas o de procedimientos poco repetibles.
+- Cost per part of system unclear.
+- Small changes create too much risk.
+- Docs don't reflect real environment.
+- Access depends on specific people or non-repeatable procedures.
 
-## Qué aporta un enfoque gestionado
+## What a managed approach gives
 
-Cloud gestionado no significa perder control. Significa ordenar la plataforma para que haya criterio común en despliegues, permisos, copias, observabilidad y cambios. El objetivo es que el entorno pueda sostener operación diaria y evolución futura.
+Managed cloud doesn't mean losing control. It means ordering platform so deployments, permissions, backups, observability and changes follow shared criteria. Goal: environment supports daily operations and future evolution.
 
-## Cómo empezar sin sobredimensionar
+## How to start without overbuilding
 
-No hace falta rediseñar todo desde el primer día. Normalmente basta con identificar servicios críticos, costes principales y puntos de fallo. A partir de ahí se prioriza qué conviene automatizar, qué debe quedar como estándar y qué riesgos operativos hay que cerrar primero.
+No need to redesign everything day one. Usually identify critical services, main costs and failure points. Then prioritise what to automate, what to standardise and which operational risks to close first.

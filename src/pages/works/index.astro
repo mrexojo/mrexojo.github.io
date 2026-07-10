@@ -11,17 +11,17 @@ const works = (await getCollection('works')).sort((a, b) => {
 });
 ---
 
-<BaseLayout title="Servicios" description="Servicios y áreas de trabajo de Miguel Ramírez Exojo.">
+<BaseLayout title="Services" description="Services and areas of work by Miguel Ramirez Exojo.">
   <section class="page-head section">
-    <p class="eyebrow">Servicios</p>
-    <h1>Servicios y áreas de especialización.</h1>
+    <p class="eyebrow">Services</p>
+    <h1>Services and areas of specialization.</h1>
     <p class="lead">
-      Trabajo técnico aplicado a cloud, automatización, continuidad operativa y apoyo
-      especializado para equipos IT.
+      Hands-on technical work in cloud, automation, operational continuity and specialised
+      support for IT teams.
     </p>
   </section>
 
-  <section class="section" aria-label="Servicios destacados">
+  <section class="section" aria-label="Featured services">
     <div class="work-list">
       {
         works.map((work) => (

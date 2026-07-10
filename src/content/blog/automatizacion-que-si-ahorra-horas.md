@@ -1,31 +1,31 @@
 ---
-title: "Automatización que sí ahorra horas"
+title: "Automation That Actually Saves Hours"
 publishDate: 2026-07-09
 tags:
-  - automatizacion
-  - productividad
-  - operaciones
-description: "Cómo detectar automatizaciones útiles de verdad frente a cambios vistosos pero poco rentables."
+  - automation
+  - productivity
+  - operations
+description: "How to spot automations that truly deliver value versus flashy but low-return changes."
 draft: false
 ---
 
-## No todo merece automatizarse
+## Not everything deserves automation
 
-Automatizar tareas con poco impacto puede dar sensación de avance y no cambiar nada importante. La clave está en mirar frecuencia, error humano, coste de coordinación y dependencia entre equipos.
+Automating low-impact tasks can create illusion of progress without real change. Key: assess frequency, human error risk, coordination cost, and team dependencies.
 
-## Dónde suele haber retorno
+## Where returns usually appear
 
-Las mejores automatizaciones suelen aparecer en:
+Best automations target:
 
-- Despliegues repetitivos.
-- Preparación de entornos.
-- Tareas de soporte con reglas claras.
-- Integraciones manuales entre herramientas.
+- Repetitive deployments.
+- Environment provisioning.
+- Support tasks with clear rules.
+- Manual integrations between tools.
 
-## Qué evitar
+## What to avoid
 
-No conviene empezar por flujos mal definidos. Si el proceso cambia cada semana o nadie sabe realmente quién decide cada paso, automatizar demasiado pronto solo encapsula desorden.
+Don't start with poorly-defined flows. If process changes weekly or no one knows decision owner, early automation just encapsulates disorder.
 
-## Cómo priorizar
+## How to prioritise
 
-Suelo valorar tres cosas: cuánto tiempo consume, cuánto riesgo reduce y cuántas personas dependen de esa tarea. Si la respuesta es alta en las tres, probablemente merece automatización.
+I evaluate three factors: time consumed, risk reduction, number of people dependent. High on all three → automate.

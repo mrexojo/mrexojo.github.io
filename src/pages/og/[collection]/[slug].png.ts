@@ -25,7 +25,7 @@ export const getStaticPaths = (async () => {
       props: {
         title: entry.data.title,
         description: entry.data.description,
-        kind: 'Artículo',
+      kind: 'Article',
       } satisfies OgProps,
     })),
     ...works.map((entry) => ({
@@ -33,7 +33,7 @@ export const getStaticPaths = (async () => {
       props: {
         title: entry.data.title,
         description: entry.data.description,
-        kind: 'Servicio',
+      kind: 'Service',
       } satisfies OgProps,
     })),
   ];

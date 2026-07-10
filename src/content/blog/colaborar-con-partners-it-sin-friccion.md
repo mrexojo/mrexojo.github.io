@@ -1,31 +1,31 @@
 ---
-title: "Cómo colaborar con partners IT sin generar fricción técnica"
+title: "How to collaborate with IT partners without creating friction"
 publishDate: 2026-07-10
 tags:
   - b2b
   - devops
-  - colaboracion
-description: "Claves para integrarse en proyectos de terceros aportando capacidad técnica sin romper el contexto existente."
+  - collaboration
+description: "Keys to integrate into third-party projects, providing technical capacity without breaking existing context."
 draft: false
 ---
 
-## El objetivo no es entrar a sustituir
+## Goal is not to replace
 
-Cuando una empresa IT pide apoyo especializado, normalmente ya existe una arquitectura, un cliente final y una forma de trabajar. El valor real está en acelerar, estabilizar o desbloquear, no en rehacerlo todo desde cero.
+When an IT company seeks specialised support, there is usually existing architecture, a client and working practices. Real value: accelerate, stabilise, unblock—not rebuild from scratch.
 
-## Qué ayuda desde el primer día
+## What helps from day one
 
-Hay cuatro hábitos que reducen mucha fricción:
+Four habits reduce most friction:
 
-- Entender el contexto antes de proponer cambios grandes.
-- Acordar claramente límites, responsables y forma de entrega.
-- Dejar decisiones y cambios suficientemente documentados.
-- Pensar siempre en el equipo que mantendrá la cuenta después.
+- Understand context before proposing big changes.
+- Agree clear boundaries, responsibilities and delivery format.
+- Leave decisions and changes well documented.
+- Always consider team that will maintain account afterwards.
 
-## Dónde se nota más el apoyo experto
+## Where expert support matters most
 
-El refuerzo técnico suele tener más impacto en migraciones delicadas, automatizaciones complejas, revisiones de arquitectura y resolución de incidencias con varias capas implicadas.
+Technical reinforcement has most impact in delicate migrations, complex automation, architecture reviews and multi-layer incident resolution.
 
-## Resultado buscado
+## Desired outcome
 
-La buena colaboración deja dos cosas: el proyecto avanza y el equipo interno se queda en mejor posición para mantenerlo después.
+Good collaboration leaves two things: project moves forward and internal team better positioned to maintain it afterward.
