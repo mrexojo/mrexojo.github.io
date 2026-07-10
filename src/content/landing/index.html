@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miguel Ramirez Exojo — Cloud, DevOps & AI Infrastructure</title>
+    <meta name="description" content="Cloud, DevOps, and AI infrastructure engineer with 19 years in IT. I help teams improve AWS, GCP, and Azure platforms, automation, costs, and early AI agent workflows.">
+    <meta name="keywords" content="cloud engineer Spain, DevOps contractor Europe, Terraform consultant, GitHub Actions consultant, AI infrastructure engineer, AI agents consultant, LLMOps, platform engineering, mrexojo">
+    <meta name="author" content="Miguel Ramirez Exojo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mrexojo.com/">
+    <link rel="alternate" type="text/plain" href="https://mrexojo.com/llms.txt" title="LLMs profile">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Miguel Ramirez Exojo — Cloud, DevOps & AI Infrastructure">
+    <meta property="og:description" content="Practical cloud, DevOps, and AI infrastructure work across AWS, GCP, and Azure. Terraform, GitHub Actions, platform automation, cost control, and early AI agent operations.">
+    <meta property="og:url" content="https://mrexojo.com/">
+    <meta property="og:image" content="https://mrexojo.com/img/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miguel Ramirez Exojo — Cloud, DevOps & AI Infrastructure">
+    <meta name="twitter:description" content="Cloud, DevOps, and AI infrastructure engineer. AWS, GCP, Azure, Terraform, GitHub Actions, and practical AI agent operations.">
+    <meta name="twitter:image" content="https://mrexojo.com/img/og-image.jpg">
+
+    <!-- Fonts: Playfair Display (headings) + IBM Plex Mono (code/accent) + IBM Plex Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg:          #0C0C0B;
+            --bg-2:        #111110;
+            --bg-3:        #161614;
+            --bg-card:     #141413;
+            --surface:     #1C1C1A;
+            --border:      rgba(255,255,255,0.10);
+            --border-hi:   rgba(255,255,255,0.20);
+            --ink:         #F5F2ED;
+            --ink-2:       #CCC8C1;
+            --ink-3:       #8C887F;
+            --ink-4:       #5A5750;
+            --green:       #4ADE80;   /* single accent — terminal green */
+            --green-dim:   rgba(74,222,128,0.12);
+            --green-glow:  rgba(74,222,128,0.06);
+            --cyan-glow:   rgba(72,163,255,0.10);
+            --violet-glow: rgba(110,92,255,0.08);
+            --serif:       'Playfair Display', Georgia, serif;
+            --mono:        'IBM Plex Mono', 'Courier New', monospace;
+            --sans:        'IBM Plex Sans', system-ui, sans-serif;
+            --max-w:       1100px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background:
+                radial-gradient(circle at 18% 12%, rgba(74,222,128,.08), transparent 24%),
+                radial-gradient(circle at 82% 18%, rgba(72,163,255,.10), transparent 26%),
+                radial-gradient(circle at 50% 100%, rgba(110,92,255,.07), transparent 34%),
+                linear-gradient(180deg, #0b0b0b 0%, #111110 42%, #0d0d0d 100%);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            width: 34rem;
+            height: 34rem;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: -1; /* move decorative blobs behind content */
+            opacity: .25; /* reduced to avoid visual noise on mobile */
+        }
+        body::before {
+            top: -10rem;
+            right: -12rem;
+            background: radial-gradient(circle, rgba(72,163,255,.18), transparent 62%);
+        }
+        body::after {
+            bottom: -14rem;
+            left: -10rem;
+            background: radial-gradient(circle, rgba(74,222,128,.16), transparent 60%);
+        }
+        header, section, footer, .ticker {
+            position: relative;
+            z-index: 1;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--ink-4); border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+
+        .container {
+            max-width: var(--max-w);
+            margin-inline: auto;
+            padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+        }
+
+        /* ── Typography ── */
+        h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
+        .mono { font-family: var(--mono); }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; } 50% { opacity: 0; }
+        }
+        @keyframes slide-left {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        @keyframes draw-line {
+            from { width: 0; }
+            to   { width: 100%; }
+        }
+
+        .reveal {
+            opacity: 0; transform: translateY(18px);
+            transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+        }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .reveal-l { opacity: 0; transform: translateX(-20px); transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); }
+        .reveal-l.in { opacity: 1; transform: translateX(0); }
+        .reveal-r { opacity: 0; transform: translateX(20px); transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); }
+        .reveal-r.in { opacity: 1; transform: translateX(0); }
+
+        /* ── Section spacing ── */
+        .section { padding-block: clamp(5rem, 10vw, 9rem); }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           HEADER
+        ━━━━━━━━━━━━━━━━━━━ */
+        header {
+            position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 100;
+            height: 60px;
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s, background .3s;
+        }
+        header.scrolled {
+            background: #0b0b0b; /* opaque background to avoid text blending on mobile */
+            /* remove backdrop-filter to prevent blurring/legibility issues on some mobile browsers */
+            border-color: var(--border);
+            box-shadow: 0 8px 30px rgba(0,0,0,.22);
+        }
+
+        .header-inner {
+            height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--mono);
+            font-size: .875rem; font-weight: 500;
+            color: var(--ink); text-decoration: none;
+            letter-spacing: .02em;
+            display: flex; align-items: center; gap: .625rem;
+        }
+        .logo-status {
+            width: 7px; height: 7px;
+            border-radius: 50%; background: var(--green);
+            flex-shrink: 0;
+            box-shadow: 0 0 6px rgba(74,222,128,.6);
+        }
+
+        nav { display: flex; align-items: center; gap: 2rem; }
+        nav a {
+            font-family: var(--mono); font-size: .72rem;
+            color: var(--ink-3); text-decoration: none;
+            letter-spacing: .06em; text-transform: uppercase;
+            transition: color .2s;
+        }
+        nav a:hover { color: var(--ink); }
+
+        .btn-book {
+            font-family: var(--mono); font-size: .72rem; font-weight: 500;
+            letter-spacing: .06em; text-transform: uppercase;
+            padding: .5rem 1rem;
+            border: 1px solid var(--border-hi);
+            border-radius: 4px;
+            color: var(--ink-2); background: transparent;
+            text-decoration: none; cursor: pointer;
+            transition: border-color .2s, color .2s;
+        }
+        .btn-book:hover { border-color: var(--green); color: var(--green); }
+
+        .ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .ham span { display: block; width: 20px; height: 1.5px; background: var(--ink-2); }
+
+        #mob-nav {
+            display: none; position: fixed; inset: 0; z-index: 200;
+            background: var(--bg);
+            flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+        }
+        #mob-nav.open { display: flex; }
+        #mob-nav a { font-family: var(--mono); font-size: 1.25rem; color: var(--ink-2); text-decoration: none; transition: color .2s; }
+        #mob-nav a:hover { color: var(--green); }
+        .mob-x { position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; color: var(--ink-3); font-size: 1.25rem; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .ham { display: flex; }
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           HERO
+        ━━━━━━━━━━━━━━━━━━━ */
+        .hero {
+            min-height: 100vh;
+            padding-top: 60px;
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+        }
+
+        /* Subtle noise texture */
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none; opacity: .35; /* reduced to avoid text confusion on scroll */
+            z-index: -1; /* ensure decorative texture sits behind hero content */
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 8% -8% auto 42%;
+            height: 68%;
+            background:
+                radial-gradient(circle at center, rgba(72,163,255,.12), transparent 45%),
+                radial-gradient(circle at 40% 60%, rgba(74,222,128,.10), transparent 38%);
+            z-index: -1; /* keep decorative layers behind content */
+        }
+            filter: blur(20px);
+            transform: rotate(-10deg);
+            pointer-events: none;
+            opacity: .9;
+        }
+
+        /* Thin horizontal line — architectural detail */
+        .hero-rule {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 1px; background: var(--border);
+        }
+
+        .hero-inner {
+            position: relative; z-index: 2;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 5rem; align-items: center;
+            padding-block: 4rem 5rem;
+            width: 100%;
+        }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-photo-col { order: -1; }
+        }
+
+        /* left col */
+        .hero-label {
+            font-family: var(--mono); font-size: .7rem;
+            color: var(--ink-3); letter-spacing: .1em; text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: .75rem;
+        }
+        .hero-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ink-4); }
+
+        .hero h1 {
+            font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+            font-weight: 900; color: var(--ink);
+            line-height: 1.06; letter-spacing: -.02em;
+            margin-bottom: 1.75rem;
+        }
+        .hero h1 em {
+            font-style: italic; color: var(--ink-2);
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: 1.0625rem; color: var(--ink-2);
+            line-height: 1.8; max-width: 42ch;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        .hero-desc strong { color: var(--ink); font-weight: 500; }
+
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+        .btn-primary {
+            font-family: var(--mono); font-size: .75rem; font-weight: 500;
+            letter-spacing: .06em; text-transform: uppercase;
+            padding: .75rem 1.5rem;
+            background: var(--green); color: #0C0C0B;
+            border: none; border-radius: 4px;
+            text-decoration: none; cursor: pointer;
+            transition: opacity .2s, transform .2s;
+        }
+        .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+
+        .btn-secondary {
+            font-family: var(--mono); font-size: .75rem; font-weight: 400;
+            letter-spacing: .06em; text-transform: uppercase;
+            padding: .75rem 1.5rem;
+            background: transparent; color: var(--ink-2);
+            border: 1px solid var(--border-hi);
+            border-radius: 4px;
+            text-decoration: none; cursor: pointer;
+            transition: border-color .2s, color .2s;
+        }
+        .btn-secondary:hover { border-color: var(--ink-2); color: var(--ink); }
+
+        .hero-meta {
+            display: flex; gap: 2.5rem; flex-wrap: wrap;
+            padding-top: 2rem; border-top: 1px solid var(--border);
+        }
+        .meta-item { }
+        .meta-val {
+            font-family: var(--serif);
+            font-size: 1.75rem; font-weight: 700;
+            color: var(--ink); line-height: 1;
+            margin-bottom: .2rem;
+        }
+        .meta-val span { color: var(--green); }
+        .meta-label { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; }
+
+        /* right col — photo */
+        .hero-photo-col { position: relative; }
+        .hero-photo-frame {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--bg-3);
+            box-shadow: 0 24px 80px rgba(0,0,0,.42);
+        }
+        .hero-photo-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(74,222,128,.10), transparent 30%, transparent 65%, rgba(72,163,255,.12));
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .hero-photo-frame img {
+            width: 100%; display: block;
+            filter: grayscale(20%);
+            transition: filter .4s, transform .6s;
+        }
+        .hero-photo-frame:hover img { filter: grayscale(0); transform: scale(1.03); }
+
+        /* Corner marks — architectural detail */
+        .corner {
+            position: absolute; width: 16px; height: 16px;
+            border-color: var(--green); border-style: solid;
+        }
+        .corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+        .corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+        .corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+        .hero-available {
+            position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border-hi);
+            border-radius: 4px;
+            padding: .625rem 1.125rem;
+            font-family: var(--mono); font-size: .7rem;
+            color: var(--ink-2);
+            white-space: nowrap;
+            display: flex; align-items: center; gap: .5rem;
+        }
+        .avail-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 6px rgba(74,222,128,.7);
+            animation: blink 2.5s ease-in-out infinite;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           TICKER
+        ━━━━━━━━━━━━━━━━━━━ */
+        .ticker {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(90deg, rgba(17,17,16,.85), rgba(22,22,20,.94), rgba(17,17,16,.85));
+            overflow: hidden; padding: .75rem 0;
+            backdrop-filter: blur(12px);
+        }
+        .ticker-inner {
+            display: inline-flex; white-space: nowrap;
+            animation: slide-left 28s linear infinite;
+        }
+        .tick-item {
+            display: inline-flex; align-items: center; gap: .75rem;
+            padding-inline: 2.5rem;
+            font-family: var(--mono); font-size: .68rem;
+            color: var(--ink-4); letter-spacing: .08em; text-transform: uppercase;
+        }
+        .tick-item i { color: var(--ink-4); }
+        .tick-sep { color: var(--green); opacity: .4; }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           WHAT I DO
+        ━━━━━━━━━━━━━━━━━━━ */
+        .whatido-grid {
+            display: grid; grid-template-columns: 1fr 2fr;
+            gap: 6rem; align-items: start;
+        }
+        @media (max-width: 768px) { .whatido-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+        .sticky-label {
+            position: sticky; top: 80px;
+        }
+        .section-num {
+            font-family: var(--mono); font-size: .65rem;
+            color: var(--ink-4); letter-spacing: .1em; text-transform: uppercase;
+            margin-bottom: 1rem; display: block;
+        }
+        .section-h {
+            font-family: var(--serif);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 900; color: var(--ink);
+            line-height: 1.15; letter-spacing: -.015em;
+        }
+        .section-h em { font-style: italic; color: var(--ink-2); font-weight: 400; }
+        .section-sub {
+            font-family: var(--sans); font-size: .9375rem;
+            color: var(--ink-3); line-height: 1.7;
+            max-width: 30ch; margin-top: .875rem;
+        }
+
+        .services-list { display: flex; flex-direction: column; }
+        .service-row {
+            display: grid; grid-template-columns: auto 1fr auto;
+            align-items: start; gap: 1.5rem;
+            padding: 1.875rem 0;
+            border-bottom: 1px solid var(--border);
+            cursor: default;
+            transition: background .2s, border-color .2s, box-shadow .2s;
+        }
+        .service-row:first-child { border-top: 1px solid var(--border); }
+        .service-row:hover {
+            background: linear-gradient(90deg, rgba(74,222,128,.06), rgba(255,255,255,.02) 36%, rgba(72,163,255,.04));
+            margin-inline: -1.5rem; padding-inline: 1.5rem; border-radius: 4px;
+            border-color: rgba(255,255,255,.16);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+        }
+
+        .sr-num { font-family: var(--mono); font-size: .68rem; color: var(--ink-4); padding-top: .2rem; letter-spacing: .06em; }
+        .sr-body h3 { font-family: var(--serif); font-size: 1.1875rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
+        .sr-body p  { font-size: .875rem; color: var(--ink-3); line-height: 1.7; max-width: 50ch; }
+        .sr-tags { display: flex; flex-wrap: wrap; gap: .375rem; margin-top: .875rem; }
+        .sr-tag {
+            font-family: var(--mono); font-size: .62rem;
+            color: var(--ink-4);
+            padding: .2rem .5rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+        }
+        .sr-arrow { color: var(--ink-4); font-size: .75rem; transition: color .2s, transform .2s; padding-top: .2rem; }
+        .service-row:hover .sr-arrow { color: var(--green); transform: translateX(3px); }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           EXPERIENCE TIMELINE
+        ━━━━━━━━━━━━━━━━━━━ */
+        .exp-layout {
+            display: grid; grid-template-columns: 1fr 2fr;
+            gap: 6rem; align-items: start;
+        }
+        @media (max-width: 768px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+        .exp-list { display: flex; flex-direction: column; gap: 0; }
+        .exp-item {
+            display: grid; grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .exp-item:first-child { border-top: 1px solid var(--border); }
+
+        .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: .3rem; }
+        .exp-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            border: 1.5px solid var(--ink-4); flex-shrink: 0;
+            transition: border-color .2s, background .2s;
+        }
+        .exp-item:hover .exp-dot { border-color: var(--green); background: var(--green); }
+        .exp-line { width: 1px; flex: 1; background: var(--border); margin-top: .375rem; }
+
+        .exp-company {
+            font-family: var(--mono); font-size: .68rem;
+            color: var(--green); letter-spacing: .06em; text-transform: uppercase;
+            margin-bottom: .25rem;
+        }
+        .exp-role { font-family: var(--serif); font-size: 1.0625rem; font-weight: 700; color: var(--ink); margin-bottom: .375rem; }
+        .exp-period { font-family: var(--mono); font-size: .65rem; color: var(--ink-4); margin-bottom: .75rem; }
+        .exp-desc { font-size: .8125rem; color: var(--ink-3); line-height: 1.7; max-width: 56ch; margin-bottom: .875rem; }
+        .exp-stack { display: flex; flex-wrap: wrap; gap: .375rem; }
+        .exp-tag {
+            font-family: var(--mono); font-size: .62rem;
+            color: var(--ink-4); padding: .2rem .5rem;
+            border: 1px solid var(--border); border-radius: 3px;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           HOW I WORK
+        ━━━━━━━━━━━━━━━━━━━ */
+        .how-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            border: 1px solid var(--border);
+            border-radius: 6px; overflow: hidden;
+        }
+        @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .how-grid { grid-template-columns: 1fr; } }
+
+        .how-cell {
+            padding: 2rem 1.75rem;
+            border-right: 1px solid var(--border);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%),
+                var(--bg-card);
+            transition: background .2s, transform .2s, border-color .2s;
+        }
+        .how-cell:last-child { border-right: none; }
+        .how-cell:hover {
+            background:
+                linear-gradient(180deg, rgba(74,222,128,.08), transparent 68%),
+                var(--bg-3);
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,.16);
+        }
+        .how-n { font-family: var(--mono); font-size: .65rem; color: var(--ink-4); letter-spacing: .1em; margin-bottom: 1.25rem; display: block; }
+        .how-cell h3 { font-family: var(--serif); font-size: .9375rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
+        .how-cell p  { font-size: .78rem; color: var(--ink-3); line-height: 1.65; }
+
+        @media (max-width: 768px) {
+            .how-cell:nth-child(2) { border-right: none; }
+            .how-cell { border-bottom: 1px solid var(--border); }
+            .how-cell:last-child { border-bottom: none; }
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           CERTS
+        ━━━━━━━━━━━━━━━━━━━ */
+        .certs-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1px; background: var(--border);
+            border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+        }
+        .cert-cell {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.015), transparent 75%),
+                var(--bg-card);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.125rem 1.375rem;
+            transition: background .2s, transform .2s;
+            gap: 1rem;
+        }
+        .cert-cell:hover {
+            background:
+                linear-gradient(180deg, rgba(72,163,255,.08), transparent 75%),
+                var(--bg-3);
+            transform: translateY(-1px);
+        }
+        .cert-left { display: flex; align-items: center; gap: .875rem; }
+        .cert-icon { font-size: .875rem; color: var(--ink-3); width: 16px; text-align: center; flex-shrink: 0; }
+        .cert-name { font-family: var(--sans); font-size: .875rem; font-weight: 500; color: var(--ink); }
+        .cert-year {
+            font-family: var(--mono); font-size: .65rem;
+            color: var(--ink-4); flex-shrink: 0;
+        }
+        .cert-year.active { color: var(--green); }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           CONTACT / CTA
+        ━━━━━━━━━━━━━━━━━━━ */
+        .contact-section {
+            background:
+                radial-gradient(circle at 88% 22%, rgba(72,163,255,.08), transparent 24%),
+                radial-gradient(circle at 15% 80%, rgba(74,222,128,.07), transparent 26%),
+                var(--bg-2);
+            border-top: 1px solid var(--border);
+        }
+        .contact-split {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 6rem; align-items: start;
+        }
+        @media (max-width: 768px) { .contact-split { grid-template-columns: 1fr; gap: 3rem; } }
+
+        .contact-left h2 {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 900; color: var(--ink);
+            line-height: 1.1; letter-spacing: -.02em;
+            margin-bottom: 1.5rem;
+        }
+        .contact-left h2 em { font-style: italic; color: var(--ink-2); font-weight: 400; }
+        .contact-left p { font-size: .9375rem; color: var(--ink-3); line-height: 1.75; max-width: 40ch; margin-bottom: 2rem; }
+
+        .contact-channels { display: flex; flex-direction: column; gap: .75rem; }
+        .channel {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 1.125rem;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,.02), transparent 62%),
+                var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px; text-decoration: none;
+            transition: border-color .2s, transform .2s, background .2s;
+            color: var(--ink);
+        }
+        .channel:hover {
+            border-color: var(--border-hi);
+            transform: translateX(3px);
+            background:
+                linear-gradient(135deg, rgba(74,222,128,.07), transparent 62%),
+                var(--bg-3);
+        }
+        .ch-icon {
+            width: 34px; height: 34px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .875rem; color: var(--ink-3);
+            flex-shrink: 0;
+        }
+        .ch-label { font-family: var(--mono); font-size: .63rem; color: var(--ink-4); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .1rem; }
+        .ch-val   { font-size: .875rem; font-weight: 500; color: var(--ink-2); }
+
+        .cal-wrap {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .cal-wrap-header {
+            padding: .875rem 1.125rem;
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: .5rem;
+            background: var(--bg-3);
+        }
+        .cal-wrap-title { font-family: var(--mono); font-size: .7rem; color: var(--ink-3); }
+        .cal-visual {
+            display: grid;
+            gap: 1.25rem;
+            padding: 1.125rem;
+        }
+        .cal-shot {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg-3);
+        }
+        .cal-shot img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+        .cal-copy {
+            display: grid;
+            gap: .625rem;
+        }
+        .cal-copy h3 {
+            font-family: var(--serif);
+            font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+            line-height: 1.12;
+            color: var(--ink);
+        }
+        .cal-copy p {
+            font-size: .9rem;
+            line-height: 1.7;
+            color: var(--ink-3);
+        }
+        .cal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            margin-top: .25rem;
+        }
+        .cal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            text-decoration: none;
+            border-radius: 4px;
+            padding: .75rem 1rem;
+            font-family: var(--mono);
+            font-size: .72rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            transition: border-color .2s, color .2s, background .2s;
+        }
+        .cal-link-primary {
+            background: var(--green);
+            color: #0C0C0B;
+            border: 1px solid var(--green);
+        }
+        .cal-link-primary:hover {
+            opacity: .9;
+        }
+        .cal-link-secondary {
+            background: transparent;
+            color: var(--ink-2);
+            border: 1px solid var(--border-hi);
+        }
+        .cal-link-secondary:hover {
+            border-color: var(--ink-2);
+            color: var(--ink);
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           FOOTER
+        ━━━━━━━━━━━━━━━━━━━ */
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding-block: 2rem;
+        }
+        .footer-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 1.5rem; flex-wrap: wrap;
+        }
+        .footer-copy { font-family: var(--mono); font-size: .65rem; color: var(--ink-4); }
+        .footer-links { display: flex; gap: 1.75rem; }
+        .footer-links a {
+            font-family: var(--mono); font-size: .65rem;
+            color: var(--ink-4); text-decoration: none;
+            transition: color .2s;
+        }
+        .footer-links a:hover { color: var(--ink-2); }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a {
+            color: var(--ink-4); text-decoration: none; font-size: .875rem;
+            transition: color .2s;
+        }
+        .footer-social a:hover { color: var(--ink-2); }
+
+        /* ━━━━━━━━━━━━━━━━━━━
+           WRITING / YOUTUBE
+        ━━━━━━━━━━━━━━━━━━━ */
+        .yt-section { border-top: 1px solid var(--border); }
+
+        .yt-header {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+        }
+        .yt-header-left {}
+        .yt-subscribe {
+            display: inline-flex; align-items: center; gap: .625rem;
+            font-family: var(--mono); font-size: .72rem; font-weight: 500;
+            letter-spacing: .06em; text-transform: uppercase;
+            padding: .5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            color: var(--ink-3); text-decoration: none;
+            transition: border-color .2s, color .2s;
+            white-space: nowrap;
+        }
+        .yt-subscribe:hover { border-color: #FF0000; color: #FF4444; }
+        .yt-subscribe i { font-size: .875rem; }
+
+        /* Featured video — big embed */
+        .yt-featured {
+            position: relative;
+            background:
+                radial-gradient(circle at top right, rgba(72,163,255,.12), transparent 28%),
+                radial-gradient(circle at bottom left, rgba(74,222,128,.10), transparent 30%),
+                linear-gradient(180deg, rgba(255,255,255,.02), transparent 70%),
+                var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 20px 70px rgba(0,0,0,.28);
+        }
+        .yt-featured-inner {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+        }
+        .yt-featured-inner iframe {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            border: 0; display: block;
+        }
+
+        /* Thumbnail grid */
+        .yt-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .875rem;
+        }
+        @media (max-width: 900px)  { .yt-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px)  { .yt-grid { grid-template-columns: 1fr; } }
+
+        .yt-thumb {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color .25s, transform .25s;
+            position: relative;
+        }
+        .yt-thumb:hover { border-color: var(--border-hi); transform: translateY(-3px); }
+        .yt-thumb.active { border-color: var(--green); }
+
+        .yt-thumb-img {
+            position: relative;
+            width: 100%; padding-bottom: 56.25%;
+            background: var(--bg-3); overflow: hidden;
+        }
+        .yt-thumb-img img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: opacity .3s;
+        }
+        .yt-play-overlay {
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0,0,0,.3);
+            opacity: 0; transition: opacity .25s;
+        }
+        .yt-thumb:hover .yt-play-overlay { opacity: 1; }
+        .yt-play-btn {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,.92);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .yt-play-btn i { color: #0C0C0B; font-size: .75rem; margin-left: 2px; }
+
+        .yt-thumb-meta {
+            padding: .75rem .875rem .875rem;
+        }
+        .yt-thumb-title {
+            font-family: var(--sans); font-size: .8rem; font-weight: 500;
+            color: var(--ink-2); line-height: 1.45;
+            display: -webkit-box; -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; overflow: hidden;
+            margin-bottom: .375rem;
+            transition: color .2s;
+        }
+        .yt-thumb:hover .yt-thumb-title { color: var(--ink); }
+        .yt-thumb.active .yt-thumb-title { color: var(--green); }
+        .yt-thumb-date {
+            font-family: var(--mono); font-size: .62rem; color: var(--ink-4);
+        }
+        .yt-placeholder {
+            padding: clamp(1.5rem, 3vw, 2.25rem);
+            display: grid;
+            gap: 1.25rem;
+        }
+        .yt-placeholder h3 {
+            font-family: var(--serif);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            line-height: 1.15;
+            color: var(--ink);
+        }
+        .yt-placeholder p {
+            font-size: .9375rem;
+            line-height: 1.75;
+            color: var(--ink-3);
+            max-width: 58ch;
+        }
+        .yt-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .625rem;
+        }
+        .yt-badge {
+            font-family: var(--mono);
+            font-size: .66rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: .45rem .7rem;
+        }
+        /* ━━━━━━━━━━━━━━━━━━━
+           MODAL
+        ━━━━━━━━━━━━━━━━━━━ */
+        #cal-modal {
+            display: none; position: fixed; inset: 0; z-index: 300;
+            background: rgba(12,12,11,.85); backdrop-filter: blur(12px);
+            align-items: center; justify-content: center;
+        }
+        #cal-modal.open { display: flex; }
+        .cal-modal-box {
+            background: var(--bg-card); border: 1px solid var(--border-hi);
+            border-radius: 8px; overflow: hidden;
+            width: min(760px, 94vw);
+            box-shadow: 0 40px 80px rgba(0,0,0,.5);
+        }
+        .cal-modal-head {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 1.375rem; border-bottom: 1px solid var(--border);
+            background: var(--bg-3);
+        }
+        .cal-modal-head span { font-family: var(--mono); font-size: .75rem; color: var(--ink-3); }
+        .cal-x { background: none; border: none; color: var(--ink-4); cursor: pointer; font-size: 1.125rem; transition: color .2s; }
+        .cal-x:hover { color: var(--ink); }
+        .cal-modal-body {
+            display: grid;
+            grid-template-columns: minmax(220px, 280px) 1fr;
+            gap: 1.25rem;
+            padding: 1.25rem;
+        }
+        .cal-modal-body .cal-shot {
+            height: 100%;
+        }
+        .cal-modal-body .cal-shot img {
+            height: 100%;
+        }
+        .cal-frame {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #ffffff;
+            min-height: 560px;
+        }
+        .cal-frame iframe {
+            width: 100%;
+            height: 560px;
+            border: 0;
+            display: block;
+            background: #ffffff;
+        }
+        @media (max-width: 700px) {
+            .cal-modal-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ━━━━ HEADER ━━━━ -->
+<header id="hdr">
+    <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-status"></span>
+                mrexojo.com
+            </a>
+            <nav>
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#certs">Credentials</a>
+                <a href="#channel">Channel</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="btn-book" data-open-cal>Book a call</a>
+            </nav>
+            <button class="ham" id="ham-btn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div id="mob-nav">
+    <button class="mob-x" id="mob-close">&times;</button>
+    <a href="#work"       class="mob-link">Work</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#certs"      class="mob-link">Credentials</a>
+    <a href="#channel"    class="mob-link">Channel</a>
+    <a href="#contact"    class="mob-link">Contact</a>
+    <a href="#" data-open-cal class="mob-link" style="color:var(--green)">Book a call</a>
+</div>
+
+<!-- ━━━━ HERO ━━━━ -->
+<section class="hero" id="top">
+    <div class="hero-rule"></div>
+    <div class="container" style="width:100%">
+        <div class="hero-inner">
+
+            <!-- Left -->
+            <div>
+                <div class="hero-label reveal">
+                    Senior Cloud & DevSecOps Engineer · Remote from Europe
+                </div>
+
+                <h1 class="reveal" style="transition-delay:.1s">
+                    Cloud, DevOps<br>
+                    & AI Infrastructure<br>
+                    <em>work</em>
+                </h1>
+
+                <p class="hero-desc reveal" style="transition-delay:.2s">
+                    19 years in systems and cloud work across AWS, GCP, and Azure.
+                    <strong>Available for remote B2B contracts</strong> focused on automation, cost control, platform reliability, and early AI agent workflows.
+                </p>
+
+                <div class="hero-actions reveal" style="transition-delay:.3s">
+                    <a href="#" class="btn-primary" data-open-cal>Schedule a call</a>
+                    <a href="#work" class="btn-secondary">View my experience</a>
+                </div>
+
+                <div class="hero-meta reveal" style="transition-delay:.4s">
+                    <div class="meta-item">
+                        <div class="meta-val">19<span></span></div>
+                        <div class="meta-label">Years of experience</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-val">3<span>x</span></div>
+                        <div class="meta-label">Cloud Platforms</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-val">8<span>+</span></div>
+                        <div class="meta-label">Industry Certs</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-val">LPIC-3<span></span></div>
+                        <div class="meta-label">Linux Certified</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right — photo -->
+            <div class="hero-photo-col reveal-r" style="transition-delay:.25s">
+                <div class="hero-photo-frame">
+                    <img src="img/mrexojo-devops.webp" alt="Miguel Ramirez Exojo — Senior Cloud & DevSecOps Engineer">
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+                </div>
+                <div class="hero-available">
+                    <span class="avail-dot"></span>
+                    Available for remote contracts · Europe timezones (UTC 0 to +4 UTC)
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ TICKER ━━━━ -->
+<div class="ticker">
+    <div class="ticker-inner">
+        <span class="tick-item"><i class="fa-brands fa-aws"></i> AWS <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-google"></i> GCP <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-microsoft"></i> Azure <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-cubes"></i> Terraform <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-dharmachakra"></i> Kubernetes <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-docker"></i> Docker <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-github"></i> GitHub Actions <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-chart-line"></i> Prometheus · Grafana <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-linux"></i> Linux LPIC-3 <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-coins"></i> FinOps FOCP <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-shield-halved"></i> DevSecOps <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-microchip"></i> AI Infrastructure <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-server"></i> SRE <span class="tick-sep">/</span></span>
+        <!-- dup -->
+        <span class="tick-item"><i class="fa-brands fa-aws"></i> AWS <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-google"></i> GCP <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-microsoft"></i> Azure <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-cubes"></i> Terraform <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-dharmachakra"></i> Kubernetes <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-docker"></i> Docker <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-github"></i> GitHub Actions <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-chart-line"></i> Prometheus · Grafana <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-brands fa-linux"></i> Linux LPIC-3 <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-coins"></i> FinOps FOCP <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-shield-halved"></i> DevSecOps <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-microchip"></i> AI Infrastructure <span class="tick-sep">/</span></span>
+        <span class="tick-item"><i class="fa-solid fa-server"></i> SRE <span class="tick-sep">/</span></span>
+    </div>
+</div>
+
+<!-- ━━━━ WHAT I DO ━━━━ -->
+<section class="section" id="work">
+    <div class="container">
+        <div class="whatido-grid">
+            <div class="sticky-label reveal-l">
+                <span class="section-num">// 01</span>
+                <h2 class="section-h">What<br>I <em>solve</em></h2>
+                <p class="section-sub">For CTOs, Cloud Directors, Engineering Managers, and recruiters who need clearer decisions, safer delivery, and senior contractor capacity without long hiring cycles.</p>
+            </div>
+
+            <div class="services-list reveal" style="transition-delay:.1s">
+                <div class="service-row">
+                    <span class="sr-num">01</span>
+                    <div class="sr-body">
+                        <h3>Clearer cloud decisions before cost grows</h3>
+                        <p>Useful when leadership needs senior review on platform choices, migration scope, ownership, or trade-offs before more budget and team time are committed.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">CTO</span>
+                            <span class="sr-tag">Cloud Director</span>
+                            <span class="sr-tag">Architecture Review</span>
+                            <span class="sr-tag">Risk</span>
+                            <span class="sr-tag">Priorities</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+
+                <div class="service-row">
+                    <span class="sr-num">02</span>
+                    <div class="sr-body">
+                        <h3>Faster progress without waiting for full-time hiring</h3>
+                        <p>Senior contractor model helps teams move on urgent infrastructure or platform work now, with less ramp-up, less hiring drag, and cleaner exit once objective is done.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">Contractor</span>
+                            <span class="sr-tag">Fast Ramp-Up</span>
+                            <span class="sr-tag">B2B</span>
+                            <span class="sr-tag">Shorter Hiring Delay</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+
+                <div class="service-row">
+                    <span class="sr-num">03</span>
+                    <div class="sr-body">
+                        <h3>Safer delivery with less manual friction</h3>
+                        <p>Engineering managers get pipelines and release paths that are easier to trust: fewer manual steps, clearer controls, and less time lost in unstable CI/CD.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">Engineering Manager</span>
+                            <span class="sr-tag">Release Safety</span>
+                            <span class="sr-tag">CI/CD</span>
+                            <span class="sr-tag">Security Controls</span>
+                            <span class="sr-tag">Auditability</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+
+                <div class="service-row">
+                    <span class="sr-num">04</span>
+                    <div class="sr-body">
+                        <h3>Better visibility before incidents escalate</h3>
+                        <p>Cloud and platform teams get clearer signals around reliability, alert quality, ownership, and runbooks, so fewer problems arrive late and noisier than needed.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">Observability</span>
+                            <span class="sr-tag">SRE</span>
+                            <span class="sr-tag">Incident Readiness</span>
+                            <span class="sr-tag">Runbooks</span>
+                            <span class="sr-tag">Ownership</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+
+                <div class="service-row">
+                    <span class="sr-num">05</span>
+                    <div class="sr-body">
+                        <h3>Work internal teams can keep after handover</h3>
+                        <p>Important for managers and recruiters: infrastructure work should stay modular, documented, and maintainable after contractor phase ends, not create new dependency.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">Handover</span>
+                            <span class="sr-tag">Documentation</span>
+                            <span class="sr-tag">Recruiter Friendly</span>
+                            <span class="sr-tag">Maintainability</span>
+                            <span class="sr-tag">Ownership</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+
+                <div class="service-row">
+                    <span class="sr-num">06</span>
+                    <div class="sr-body">
+                        <h3>Lower waste in cloud spend and delivery effort</h3>
+                        <p>Reviewing platform costs, weak process areas, and technical debt helps teams reduce waste while improving delivery pace and operational clarity at same time.</p>
+                        <div class="sr-tags">
+                            <span class="sr-tag">FinOps</span>
+                            <span class="sr-tag">Cost Control</span>
+                            <span class="sr-tag">Technical Debt</span>
+                            <span class="sr-tag">Delivery Efficiency</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sr-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ EXPERIENCE ━━━━ -->
+<section class="section" id="experience" style="background:var(--bg-2); border-top:1px solid var(--border)">
+    <div class="container">
+        <div class="exp-layout">
+            <div class="sticky-label reveal-l">
+                <span class="section-num">// 02</span>
+                <h2 class="section-h">Where<br>I've <em>been</em></h2>
+                <p class="section-sub">From physical servers to multi-region Kubernetes. The full arc.</p>
+            </div>
+
+            <div class="exp-list reveal" style="transition-delay:.1s">
+
+                <!-- Contractor block -->
+                <div class="exp-item">
+                    <div class="exp-dot-col">
+                        <div class="exp-dot" style="border-color:var(--green); background:var(--green)"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div>
+                        <div class="exp-company" style="color:var(--green)">mrexojo.com · B2B Contractor</div>
+                        <div class="exp-role">Freelance Cloud & DevOps Engineer</div>
+                        <div class="exp-period">2022 — Present · Remote · Spain / Europe Timezones</div>
+                        <p class="exp-desc">Providing senior B2B contracting and cloud capacity for European and global engineering teams. Client engagements include Orange Bank, Softeca.es, Biability.com, SantaLucía, and Jefferson Frank IT Consulting. Focus areas:</p>
+
+                        <div style="display:flex; flex-direction:column; gap:.875rem; margin-top:.875rem; margin-bottom:1rem">
+                            <div style="padding:.875rem 1rem; background:var(--bg-3); border:1px solid var(--border); border-left:2px solid var(--green); border-radius:4px">
+                                <div style="font-family:var(--mono); font-size:.65rem; color:var(--ink-4); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem">DevSecOps & Platform Automation</div>
+                                <p style="font-size:.8125rem; color:var(--ink-2); line-height:1.65">Managed and oversaw developer toolchains and GitHub organizations. Designed and implemented GitOps workflows with Terraform and GitHub Actions, integrating automated security scanners (Snyk, Semgrep, SonarQube, DependencyTrack, zizmor, DefectDojo). <strong style="color:var(--ink)">Reduced deployment times by ~40%</strong> and eliminated manual environment errors.</p>
+                            </div>
+                            <div style="padding:.875rem 1rem; background:var(--bg-3); border:1px solid var(--border); border-left:2px solid var(--green); border-radius:4px">
+                                <div style="font-family:var(--mono); font-size:.65rem; color:var(--ink-4); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem">Cloud cost optimization & FinOps</div>
+                                <p style="font-size:.8125rem; color:var(--ink-2); line-height:1.65">Audited infrastructure architectures and established cloud cost controls on AWS and Azure. Implemented right-sizing, spot instances, and clean-up automation. <strong style="color:var(--ink)">Achieved a 25% reduction in monthly cloud spend</strong> while migrating workloads safely to containerized services (ECS, Lambda, S3, CloudFront).</p>
+                            </div>
+                            <div style="padding:.875rem 1rem; background:var(--bg-3); border:1px solid var(--border); border-left:2px solid var(--green); border-radius:4px">
+                                <div style="font-family:var(--mono); font-size:.65rem; color:var(--ink-4); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem">AI Integrations & Operations</div>
+                                <p style="font-size:.8125rem; color:var(--ink-2); line-height:1.65">Helping teams evaluate AI infrastructure, local LLM tooling, and early AI agent workflows with normal operational discipline around deployment, cost, and reliability.</p>
+                            </div>
+                        </div>
+
+                        <div class="exp-stack">
+                            <span class="exp-tag">Terraform</span><span class="exp-tag">GitHub Actions</span><span class="exp-tag">AWS</span><span class="exp-tag">Azure</span><span class="exp-tag">FinOps</span><span class="exp-tag">DevSecOps</span><span class="exp-tag">NVIDIA NCA-AIIO</span><span class="exp-tag">AI Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-dot-col">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div>
+                        <div class="exp-company">Copado (US)</div>
+                        <div class="exp-role">Cloud Infrastructure Engineer</div>
+                        <div class="exp-period">2021 — 2022</div>
+                        <p class="exp-desc">Contributed to a global, distributed infrastructure team (cooperating across US, India, and Europe) managing a Salesforce DevOps platform. Focused on automating multi-environment deployments, strengthening platform security, and ensuring high system availability.</p>
+
+                        <div style="display:flex; flex-direction:column; gap:.625rem; margin-top:.875rem; margin-bottom:1rem">
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Designed and maintained comprehensive IaC solutions leveraging custom Terraform modules integrated with GKE, Cloud Storage, and Cloud SQL.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Built robust observability solutions using Sumo Logic, Fluentd, and Prometheus across Heroku, AWS, and GCP. Created alerts that sustained <strong style="color:var(--ink)">98% distributed system uptime</strong> and helped mitigate severe zero-day incidents (e.g. log4j).</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Enhanced continuous deployment (CI/CD) pipelines inside GitLab CI incorporating HashiCorp Vault security. Provided Level 3 support to agile Salesforce developer teams, facilitating EU database migrations from Heroku to Cloud SQL.</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-stack">
+                            <span class="exp-tag">GKE</span><span class="exp-tag">Terraform</span><span class="exp-tag">Sumo Logic</span><span class="exp-tag">GitLab CI</span><span class="exp-tag">HashiCorp Vault</span><span class="exp-tag">GCP</span><span class="exp-tag">Observability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-dot-col">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div>
+                        <div class="exp-company">Sngular (Spain)</div>
+                        <div class="exp-role">Cloud & DevOps Engineer</div>
+                        <div class="exp-period">2018 — 2021</div>
+                        <p class="exp-desc">Embedded as a consulting engineer for prominent clients in retail and finance, delivering robust automation and architectural migrations to cloud and hybrid systems.</p>
+
+                        <div style="display:flex; flex-direction:column; gap:.625rem; margin-top:.875rem; margin-bottom:1rem">
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6"><strong>Decathlon Spain (2020 — 2021)</strong>: Automated and orchestrated the deployment of Node.js data extractors on Azure Kubernetes Service (AKS) utilizing Azure DevOps, streamlining business intelligence reporting.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6"><strong>Telefónica Foundation (2018 — 2020)</strong>: Co-designed and deployed Infrastructure as Code (IaC) for a global volunteering platform (autoscaling groups, RDS, CloudFront, high-availability Jenkins/MongoDB/GlusterFS setup) using Ansible, Packer, and Terraform.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6"><strong>Hbwell & Internal Services (2018 — 2020)</strong>: Handled AWS environments and centralized logging architectures (Graylog/Sensu) for a clinic appointments platform. Administered internal operational systems (GitLab, SonarQube, Keycloak, Jira).</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-stack">
+                            <span class="exp-tag">AWS</span><span class="exp-tag">Azure (AKS)</span><span class="exp-tag">Terraform</span><span class="exp-tag">Ansible</span><span class="exp-tag">Packer</span><span class="exp-tag">Azure DevOps</span><span class="exp-tag">Kubernetes</span><span class="exp-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-dot-col">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div>
+                        <div class="exp-company">Nokia Spain</div>
+                        <div class="exp-role">Site Reliability Engineer</div>
+                        <div class="exp-period">2016 — 2018</div>
+                        <p class="exp-desc">Oversaw physical server infrastructure in the CPD and managed OpenStack environments, collaborating internationally to support large-scale telecom OTT streaming services.</p>
+
+                        <div style="display:flex; flex-direction:column; gap:.625rem; margin-top:.875rem; margin-bottom:1rem">
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Administered OpenStack (Mitaka/Pike) environments, managing and troubleshooting virtual compute, storage, and networking resources.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Automated bare-metal server provisioning using MAAS (Canonical) and custom Red Hat Linux ISOs, significantly reducing cycle time for systems setup.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6">Built Grafana/InfluxDB performance analysis stacks and ran PoCs of custom Puppet Server infrastructures leveraging Hiera configuration patterns.</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-stack">
+                            <span class="exp-tag">OpenStack</span><span class="exp-tag">MAAS</span><span class="exp-tag">Puppet</span><span class="exp-tag">Grafana</span><span class="exp-tag">Red Hat Enterprise Linux</span><span class="exp-tag">Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-dot-col">
+                        <div class="exp-dot"></div>
+                    </div>
+                    <div>
+                        <div class="exp-company">Linux SysAdmin & Systems Engineer</div>
+                        <div class="exp-role">Systems Administrator / Engineer</div>
+                        <div class="exp-period">2007 — 2016 · Early Foundation</div>
+                        <p class="exp-desc">Acquired a deep foundation in classic system administration, storage, database management, and network hardware configuration prior to the widespread adoption of modern cloud standards.</p>
+
+                        <div style="display:flex; flex-direction:column; gap:.625rem; margin-top:.875rem; margin-bottom:1rem">
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6"><strong>IIC (2012 — 2016)</strong>: Senior Linux SysAdmin for Ubuntu and CentOS servers. Managed P2V migrations to VMware ESXi and oVirt (KVM). Administered RAID arrays, email (Dovecot/LDAP), databases (MySQL/PostgreSQL), Apache/Tomcat servers, Nagios monitoring, and Bacula backups. Supervised the Systems department for seven months.</span>
+                            </div>
+                            <div style="display:flex; gap:.625rem; align-items:flex-start">
+                                <span style="font-family:var(--mono); font-size:.7rem; color:var(--green); flex-shrink:0; margin-top:.1rem">→</span>
+                                <span style="font-size:.8125rem; color:var(--ink-2); line-height:1.6"><strong>ZeppelinTV & POS Technician (2007 — 2011)</strong>: Managed Windows Server environments, Active Directory networks, Microsoft Exchange, and virtualization setups via Citrix XenServer. Configured networking infrastructure across remote setups and resolved user workstation problems.</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-stack">
+                            <span class="exp-tag">Linux (Ubuntu/CentOS)</span><span class="exp-tag">VMware</span><span class="exp-tag">oVirt (KVM)</span><span class="exp-tag">Active Directory</span><span class="exp-tag">Apache/Tomcat</span><span class="exp-tag">Databases</span><span class="exp-tag">Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ HOW I WORK ━━━━ -->
+<section class="section" id="how">
+    <div class="container">
+        <div class="reveal" style="text-align:center; max-width:36rem; margin-inline:auto; margin-bottom:3.5rem">
+            <span class="section-num" style="display:block; text-align:center">// 03</span>
+            <h2 class="section-h" style="font-size:clamp(1.75rem,3.5vw,2.5rem)">How I engage</h2>
+            <p style="font-size:.9375rem; color:var(--ink-3); margin-top:.875rem; line-height:1.75">
+                B2B contracts only. Remote, async-first, and scoped around clear outcomes.
+            </p>
+        </div>
+
+        <div class="how-grid reveal" style="transition-delay:.05s">
+            <div class="how-cell">
+                <span class="how-n">// Format</span>
+                <h3>Project-based or retainer</h3>
+                <p>Fixed-scope work or monthly support. Clear goals, realistic timelines, and written decisions.</p>
+            </div>
+            <div class="how-cell">
+                <span class="how-n">// timezone</span>
+                <h3>Europe-aligned</h3>
+                <p>Based in Spain, working across UTC 0 to +4. Remote by default, with live meetings when useful.</p>
+            </div>
+            <div class="how-cell">
+                <span class="how-n">// Billing</span>
+                <h3>EU B2B VAT Registered</h3>
+                <p>Spanish autonomous contractor with EU VAT registration. Standard invoicing for EU and international companies.</p>
+            </div>
+            <div class="how-cell">
+                <span class="how-n">// First Step</span>
+                <h3>30-minute diagnostic</h3>
+                <p>Short intro call to understand scope, constraints, and fit. If project makes sense, I send next steps and proposal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ CREDENTIALS ━━━━ -->
+<section class="section" id="certs" style="background:var(--bg-2); border-top:1px solid var(--border)">
+    <div class="container">
+        <div class="reveal" style="margin-bottom:2.5rem">
+            <span class="section-num">// 04</span>
+            <h2 class="section-h" style="font-size:clamp(1.75rem,3.5vw,2.5rem)">Credentials</h2>
+            <p style="font-size:.9375rem; color:var(--ink-3); margin-top:.75rem; line-height:1.75; max-width:40ch">
+                Certifications related to tools and platforms I work with regularly.
+            </p>
+        </div>
+
+        <div class="certs-grid reveal" style="transition-delay:.05s">
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-solid fa-microchip cert-icon"></i>
+                    <span class="cert-name">NVIDIA NCA-AIIO AI Infrastructure and Operations</span>
+                </div>
+                <span class="cert-year active">2026</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-brands fa-google cert-icon"></i>
+                    <span class="cert-name">Google Cloud Certified Engineer (Renewed)</span>
+                </div>
+                <span class="cert-year active">2025</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-brands fa-aws cert-icon"></i>
+                    <span class="cert-name">AWS Solutions Architect Associate</span>
+                </div>
+                <span class="cert-year">2023</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-solid fa-coins cert-icon"></i>
+                    <span class="cert-name">FinOps Certified Practitioner (FOCP)</span>
+                </div>
+                <span class="cert-year">2023</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-solid fa-lock cert-icon"></i>
+                    <span class="cert-name">AWS Security Specialty</span>
+                </div>
+                <span class="cert-year">2022</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-solid fa-cubes cert-icon"></i>
+                    <span class="cert-name">HashiCorp Terraform Certified Associate</span>
+                </div>
+                <span class="cert-year">2020</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-brands fa-linux cert-icon"></i>
+                    <span class="cert-name">Linux LPIC-3 (Virtualization & HA)</span>
+                </div>
+                <span class="cert-year">2018</span>
+            </div>
+            <div class="cert-cell">
+                <div class="cert-left">
+                    <i class="fa-solid fa-cloud cert-icon"></i>
+                    <span class="cert-name">OpenStack Certified Administrator (COA)</span>
+                </div>
+                <span class="cert-year">2017</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ YOUTUBE CHANNEL ━━━━ -->
+<section class="section yt-section" id="channel">
+    <div class="container">
+
+        <div class="yt-header reveal">
+            <div class="yt-header-left">
+                <span class="section-num">// 05</span>
+                <h2 class="section-h" style="font-size:clamp(1.75rem,3.5vw,2.5rem)">On the channel</h2>
+                <p style="font-size:.9375rem; color:var(--ink-3); margin-top:.75rem; line-height:1.75; max-width:48ch">
+                    YouTube channel is live at @mrexojo. First videos are still in preparation. Focus will be practical, clear, and useful for decision makers as well as technical teams.
+                </p>
+            </div>
+            <a href="https://youtube.com/@mrexojo" target="_blank" rel="noopener noreferrer" class="yt-subscribe">
+                <i class="fa-brands fa-youtube"></i> Visit @mrexojo on YouTube
+            </a>
+        </div>
+
+        <div class="yt-featured reveal" id="yt-player-wrap" style="transition-delay:.05s">
+            <div class="yt-placeholder">
+                <div>
+                    <div class="section-num" style="margin-bottom:.75rem">// provisional</div>
+                    <h3>First videos coming soon</h3>
+                </div>
+                <p>
+                    Channel will share practical ideas, lessons from real projects, and short explanations around cloud, automation,
+                    cost, security, and AI work. Message aims to be useful for clients, leads, and technical teams.
+                </p>
+                <div class="yt-badges" aria-label="Planned channel topics">
+                    <span class="yt-badge">Cloud</span>
+                    <span class="yt-badge">Automation</span>
+                    <span class="yt-badge">Security</span>
+                    <span class="yt-badge">Cost</span>
+                    <span class="yt-badge">AI</span>
+                    <span class="yt-badge">Business Context</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ━━━━ CONTACT ━━━━ -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="contact-split">
+            <div class="reveal-l">
+                <span class="section-num">// 06</span>
+                <h2 class="contact-left" style="font-family:var(--serif); font-size:clamp(2rem,4vw,3.25rem); font-weight:900; line-height:1.1; letter-spacing:-.02em; margin-bottom:1.5rem; color:var(--ink)">
+                    Need help with<br>cloud, automation,<br>
+                    <em style="font-style:italic; color:var(--ink-2); font-weight:400">or AI ops?</em>
+                </h2>
+                <p style="font-size:.9375rem; color:var(--ink-3); line-height:1.75; max-width:38ch; margin-bottom:2rem">
+                    I work with teams that need help reviewing infrastructure, improving CI/CD, controlling costs, or setting up AI and agent workflows with basic operational discipline.
+                </p>
+
+                <div class="contact-channels">
+                    <a href="#" data-open-cal class="channel">
+                        <div class="ch-icon"><i class="fa-solid fa-calendar"></i></div>
+                        <div>
+                            <div class="ch-label">Book a call</div>
+                            <div class="ch-val">30 min intro call</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mrexojo/" target="_blank" rel="noopener noreferrer" class="channel">
+                        <div class="ch-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div>
+                            <div class="ch-label">LinkedIn</div>
+                            <div class="ch-val">linkedin.com/in/mrexojo</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/mrexojo" target="_blank" rel="noopener noreferrer" class="channel">
+                        <div class="ch-icon"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <div class="ch-label">GitHub</div>
+                            <div class="ch-val">github.com/mrexojo</div>
+                        </div>
+                    </a>
+                    <a href="mailto:hello@mrexojo.com" class="channel">
+                        <div class="ch-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="ch-label">Email</div>
+                            <div class="ch-val">hello@mrexojo.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="reveal-r" style="transition-delay:.1s">
+                <div class="cal-wrap">
+                    <div class="cal-wrap-header">
+                        <span class="logo-status" style="width:6px;height:6px"></span>
+                        <span class="cal-wrap-title">Intro call</span>
+                    </div>
+                    <div class="cal-visual">
+                        <div class="cal-shot">
+                            <img src="img/mrexojo-cloud.webp" alt="Cloud infrastructure preview">
+                        </div>
+                        <div class="cal-copy">
+                            <h3>Book intro call.</h3>
+                            <p>30 minutes to review scope, constraints, and fit. If project makes sense, next step is clear.</p>
+                            <div class="cal-actions">
+                                <a href="#" data-open-cal class="cal-link cal-link-primary">
+                                    <i class="fa-solid fa-calendar"></i> Open calendar
+                                </a>
+                                <a href="mailto:hello@mrexojo.com" class="cal-link cal-link-secondary">
+                                    <i class="fa-solid fa-envelope"></i> Email instead
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ━━━━ FOOTER ━━━━ -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <a href="#" class="logo" style="text-decoration:none">
+                <span class="logo-status"></span>
+                mrexojo.com
+            </a>
+            <div class="footer-links">
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#certs">Credentials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/mrexojo/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/mrexojo" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://youtube.com/@mrexojo" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Miguel Ramirez Exojo · Spain</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ━━━━ CALENDAR MODAL ━━━━ -->
+<div id="cal-modal">
+    <div class="cal-modal-box">
+        <div class="cal-modal-head">
+            <span>Book intro call</span>
+            <button class="cal-x" id="cal-close">&times;</button>
+        </div>
+        <div class="cal-modal-body">
+            <div class="cal-shot">
+                <img src="img/mrexojo-cloud.webp" alt="Cloud infrastructure artwork">
+            </div>
+            <div class="cal-frame">
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1G9_RkCSFehT2I-96BKFTDmvF1c5RfB2jlGxyfmcG3JboZT_ftvIH4nD4izfE7dpTTuBJZl0dR?gv=true"
+                    title="Book a call" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ━━━━ SCRIPTS ━━━━ -->
+<script>
+    // Header on scroll
+    const hdr = document.getElementById('hdr');
+    window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 30));
+
+    // Mobile nav
+    const mobNav = document.getElementById('mob-nav');
+    document.getElementById('ham-btn').addEventListener('click',  () => mobNav.classList.add('open'));
+    document.getElementById('mob-close').addEventListener('click', () => mobNav.classList.remove('open'));
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.remove('open')));
+
+    // Calendar modal
+    const calModal = document.getElementById('cal-modal');
+    document.querySelectorAll('[data-open-cal]').forEach(btn =>
+        btn.addEventListener('click', e => { e.preventDefault(); calModal.classList.add('open'); document.body.style.overflow = 'hidden'; })
+    );
+    document.getElementById('cal-close').addEventListener('click', () => { calModal.classList.remove('open'); document.body.style.overflow = ''; });
+    calModal.addEventListener('click', e => { if (e.target === calModal) { calModal.classList.remove('open'); document.body.style.overflow = ''; } });
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') { calModal.classList.remove('open'); document.body.style.overflow = ''; } });
+
+    // Intersection observer
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mrexojo.com/#person",
+      "name": "Miguel Ramirez Exojo",
+      "alternateName": "@mrexojo",
+      "url": "https://mrexojo.com",
+      "jobTitle": "Cloud, DevOps and AI Infrastructure Engineer",
+      "description": "Cloud, DevOps, and AI infrastructure engineer with 19 years in IT. Works across AWS, GCP, Azure, Terraform, GitHub Actions, local AI tooling, and early AI agent operations.",
+      "knowsAbout": [
+        "Cloud Architecture",
+        "Terraform",
+        "GitHub Actions",
+        "Kubernetes",
+        "SRE",
+        "DevSecOps",
+        "FinOps",
+        "AI Infrastructure",
+        "AI Agents",
+        "LLMOps",
+        "AWS",
+        "GCP",
+        "Azure"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mrexojo/",
+        "https://github.com/mrexojo",
+        "https://youtube.com/@mrexojo"
+      ],
+      "address": { "@type": "PostalAddress", "addressCountry": "ES" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://mrexojo.com/#service",
+      "name": "mrexojo.com",
+      "url": "https://mrexojo.com",
+      "description": "Independent cloud, DevOps, and AI infrastructure consulting for engineering teams.",
+      "serviceType": [
+        "Cloud architecture review",
+        "Terraform and infrastructure as code",
+        "CI/CD and GitHub Actions",
+        "Observability and SRE",
+        "FinOps and cost optimization",
+        "AI infrastructure and AI agent operations"
+      ],
+      "founder": { "@id": "https://mrexojo.com/#person" },
+      "areaServed": "Europe",
+      "sameAs": [
+        "https://www.linkedin.com/in/mrexojo/",
+        "https://github.com/mrexojo",
+        "https://youtube.com/@mrexojo"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mrexojo.com/#website",
+      "url": "https://mrexojo.com",
+      "name": "mrexojo.com",
+      "about": [
+        "Cloud engineering",
+        "DevOps",
+        "AI infrastructure",
+        "AI agents",
+        "GitHub Actions",
+        "Terraform"
+      ],
+      "publisher": { "@id": "https://mrexojo.com/#person" }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
