@@ -24,4 +24,11 @@ export const NAV_ITEMS = [
   { href: '/works/', label: 'Services' },
   { href: '/blog/', label: 'Blog' },
   { href: '/search/', label: 'Search' },
+  { href: '/#contact', label: 'Contact' },
 ] as const;
+
+/** Google Calendar appointment scheduling URL.
+ *  Replace with your actual scheduling link from
+ *  calendar.google.com → Appointment schedules. */
+export const BOOKING_URL =
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1_PLACEHOLDER';
