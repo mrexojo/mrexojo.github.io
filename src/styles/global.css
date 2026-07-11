@@ -177,6 +177,18 @@ a:not(.brand, .button):hover {
   background-size: 100% 1px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-actions .button {
+  min-height: 2.35rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+}
+
 .theme-toggle {
   display: grid;
   width: 2.35rem;
@@ -222,6 +234,44 @@ a:not(.brand, .button):hover {
   width: 1px;
   height: clamp(3.5rem, 8vw, 6rem);
   background: var(--color-accent);
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 26rem);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.hero-media {
+  position: relative;
+  margin: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: var(--hairline);
+}
+
+.hero-media figcaption {
+  margin-top: calc(var(--baseline) * 0.6);
+  color: var(--color-muted);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-media {
+    order: -1;
+    max-width: 22rem;
+  }
 }
 
 .hero > * {
@@ -797,8 +847,9 @@ pre code {
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem 1.5rem;
   padding-block: calc(var(--baseline) * 1.3);
   border-top: var(--hairline);
   color: var(--color-muted);
@@ -807,6 +858,113 @@ pre code {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+/* ── Experience timeline ── */
+.timeline {
+  border-top: var(--hairline);
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding-block: calc(var(--baseline) * 1.35);
+  border-bottom: var(--hairline);
+}
+
+.timeline-company {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.timeline-row p {
+  color: var(--color-muted);
+}
+
+/* ── YouTube channel, by topic ── */
+.channel-intro {
+  margin-bottom: calc(var(--baseline) * 1.5);
+}
+
+.video-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--color-line);
+  border: var(--hairline);
+}
+
+.video-section {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--color-bg);
+}
+
+.video-section p {
+  color: var(--color-muted);
+}
+
+.video-empty {
+  margin-top: var(--baseline);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.video-list {
+  display: grid;
+  gap: 1rem;
+  margin: var(--baseline) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.video-list a {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.video-list img {
+  width: 100%;
+  height: auto;
+  border: var(--hairline);
+}
+
+/* ── Contact ── */
+.contact-channels {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.channel-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.125rem;
+  border: var(--hairline);
+  text-align: left;
+  background: var(--color-bg);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.channel-row:hover {
+  border-color: var(--color-accent);
+}
+
+.channel-row:empty::before {
+  content: "Book a call";
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
 @keyframes keel-enter {
@@ -836,7 +994,7 @@ pre code {
     grid-template-columns: 1fr auto;
   }
 
-  .theme-toggle {
+  .header-actions {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -859,7 +1017,9 @@ pre code {
   .about-ledger,
   .content-index,
   .article-layout,
-  .work-card {
+  .work-card,
+  .video-sections,
+  .timeline-row {
     grid-template-columns: 1fr;
   }
 

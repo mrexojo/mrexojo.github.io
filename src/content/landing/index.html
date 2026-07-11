@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Miguel Ramirez Exojo — Cloud, DevOps & AI Infrastructure</title>
-    <meta name="description" content="Cloud, DevOps, and AI infrastructure engineer with 19 years in IT. I help teams improve AWS, GCP, and Azure platforms, automation, costs, and early AI agent workflows.">
-    <meta name="keywords" content="cloud engineer Spain, DevOps contractor Europe, Terraform consultant, GitHub Actions consultant, AI infrastructure engineer, AI agents consultant, LLMOps, platform engineering, mrexojo">
+    <meta name="description" content="Senior cloud infrastructure contractor with 19 years in IT. Remote B2B engagements across Europe — DACH, Netherlands, UK, Benelux, Nordics — in AWS, GCP, Azure, Terraform, FinOps, and DevSecOps.">
+    <meta name="keywords" content="cloud infrastructure contractor Europe, DevOps contractor Germany Netherlands UK, Terraform consultant, freelance cloud engineer DACH, FinOps consultant, GitHub Actions consultant, remote cloud contractor Benelux Nordics, platform engineering, mrexojo">
     <meta name="author" content="Miguel Ramirez Exojo">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mrexojo.com/">
@@ -965,7 +965,7 @@
                 <a href="#certs">Credentials</a>
                 <a href="#channel">Channel</a>
                 <a href="#contact">Contact</a>
-                <a href="#" class="btn-book" data-open-cal>Book a call</a>
+                <button id="sched-btn" class="btn-book" aria-label="Book an appointment"></button>
             </nav>
             <button class="ham" id="ham-btn" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -981,7 +981,7 @@
     <a href="#certs"      class="mob-link">Credentials</a>
     <a href="#channel"    class="mob-link">Channel</a>
     <a href="#contact"    class="mob-link">Contact</a>
-    <a href="#" data-open-cal class="mob-link" style="color:var(--green)">Book a call</a>
+    <a href="#contact" class="mob-link" style="color:var(--green)">Book a call</a>
 </div>
 
 <!-- ━━━━ HERO ━━━━ -->
@@ -993,7 +993,7 @@
             <!-- Left -->
             <div>
                 <div class="hero-label reveal">
-                    Senior Cloud & DevSecOps Engineer · Remote from Europe
+                    Senior Cloud & DevSecOps Contractor · Remote across Europe
                 </div>
 
                 <h1 class="reveal" style="transition-delay:.1s">
@@ -1043,7 +1043,7 @@
                 </div>
                 <div class="hero-available">
                     <span class="avail-dot"></span>
-                    Available for remote contracts · Europe timezones (UTC 0 to +4 UTC)
+                    Available for remote contracts · DACH · Netherlands · UK · Benelux · Nordics
                 </div>
             </div>
 
@@ -1386,7 +1386,7 @@
             <div class="how-cell">
                 <span class="how-n">// timezone</span>
                 <h3>Europe-aligned</h3>
-                <p>Based in Spain, working across UTC 0 to +4. Remote by default, with live meetings when useful.</p>
+                <p>Based in Spain (CET) — same working day as DACH, Benelux, and the Nordics; one hour from the UK. Remote by default, live meetings when useful.</p>
             </div>
             <div class="how-cell">
                 <span class="how-n">// Billing</span>
@@ -1551,11 +1551,11 @@
                             <div class="ch-val">github.com/mrexojo</div>
                         </div>
                     </a>
-                    <a href="mailto:hello@mrexojo.com" class="channel">
+                    <a href="mailto:services@mrexojo.com" class="channel">
                         <div class="ch-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div>
                             <div class="ch-label">Email</div>
-                            <div class="ch-val">hello@mrexojo.com</div>
+                            <div class="ch-val">services@mrexojo.com</div>
                         </div>
                     </a>
                 </div>
@@ -1592,7 +1592,7 @@
                                 })();
                                 </script>
 
-                                <a href="mailto:hello@mrexojo.com" class="cal-link cal-link-secondary">
+                                <a href="mailto:services@mrexojo.com" class="cal-link cal-link-secondary">
                                     <i class="fa-solid fa-envelope"></i> Email instead
                                 </a>
                             </div>
@@ -1603,6 +1603,30 @@
         </div>
     </div>
 </section>
+
+<script>
+// Initialize Google Scheduling buttons on pages that include them.
+window.addEventListener('load', function() {
+    try {
+        if (window.calendar && typeof window.calendar.schedulingButton?.load === 'function') {
+            // Header button target
+            const headerTarget = document.getElementById('sched-btn');
+            if (headerTarget) {
+                calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1G9_RkCSFehT2I-96BKFTDmvF1c5RfB2jlGxyfmcG3JboZT_ftvIH4nD4izfE7dpTTuBJZl0dR?gv=true',
+                    color: '#EF6C00',
+                    label: 'Book an appointment',
+                    target: headerTarget,
+                });
+            }
+            // If contact contains inline script-based button, it already initialized there.
+        }
+    } catch (e) {
+        // Silent fail; widget non-critical
+        console.warn('Scheduling button init failed', e);
+    }
+});
+</script>
 
 <!-- ━━━━ FOOTER ━━━━ -->
 <footer>
@@ -1724,7 +1748,7 @@
         "AI infrastructure and AI agent operations"
       ],
       "founder": { "@id": "https://mrexojo.com/#person" },
-      "areaServed": "Europe",
+      "areaServed": ["Europe", "Germany", "Austria", "Switzerland", "Netherlands", "United Kingdom", "Belgium", "Luxembourg", "Sweden", "Norway", "Denmark", "Finland", "Ireland", "Spain"],
       "sameAs": [
         "https://www.linkedin.com/in/mrexojo/",
         "https://github.com/mrexojo",
