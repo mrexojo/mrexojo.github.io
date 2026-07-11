@@ -71,6 +71,7 @@
 }
 
 html {
+  scroll-padding-top: 4.5rem;
   min-width: 320px;
   background: var(--color-bg);
   color: var(--color-text);
@@ -886,6 +887,31 @@ pre code {
 
 .timeline-row p {
   color: var(--color-muted);
+}
+
+/* ── Certifications ── */
+.cert-list {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--color-line);
+  border: var(--hairline);
+}
+
+.cert-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--color-bg);
+}
+
+.cert-list .meta {
+  margin: 0;
+  flex-shrink: 0;
 }
 
 /* ── YouTube channel, by topic ── */

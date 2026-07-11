@@ -20,10 +20,9 @@ export const SITE = {
  *  `base` is applied automatically via `withBase()`. */
 export const NAV_ITEMS = [
   { href: '/', label: 'Home' },
-  { href: '/about/', label: 'About' },
   { href: '/works/', label: 'Services' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/search/', label: 'Search' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/blog/', label: 'Vision' },
   { href: '/#contact', label: 'Contact' },
 ] as const;
 
@@ -82,6 +81,18 @@ export const EXPERIENCE = [
       'Foundational systems administration: Linux, virtualization, databases, backups, and network infrastructure.',
     stack: ['Linux', 'VMware', 'Databases'],
   },
+] as const;
+
+/** Certifications, most recent first. Source: src/content/cv/cv.pdf. */
+export const CERTIFICATIONS = [
+  { name: 'NVIDIA NCA-AIIO — AI Infrastructure and Operations', year: '2026' },
+  { name: 'Google Cloud Certified Engineer (Renewed)', year: '2025' },
+  { name: 'AWS Solutions Architect Associate', year: '2023' },
+  { name: 'FinOps Certified Practitioner (FOCP)', year: '2023' },
+  { name: 'AWS Security Specialty', year: '2022' },
+  { name: 'HashiCorp Terraform Certified Associate', year: '2020' },
+  { name: 'Linux LPIC-3 (Virtualization & HA)', year: '2018' },
+  { name: 'OpenStack Certified Administrator (COA)', year: '2017' },
 ] as const;
 
 /** YouTube channel, organized by topic rather than upload date. Add entries

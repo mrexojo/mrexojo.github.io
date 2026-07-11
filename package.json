@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro"
@@ -27,7 +26,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@fontsource/fraunces": "^5.2.9",
-    "pagefind": "^1.5.2",
     "satori": "^0.26.0",
     "sharp": "^0.35.3",
     "typescript": "^6.0.3"
