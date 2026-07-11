@@ -160,6 +160,25 @@ a:not(.brand, .button):hover {
   border-right: 1px solid var(--color-accent);
 }
 
+.brand-name {
+  display: inline-block;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.brand-name-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 500ms ease;
+}
+
+.brand-name-text {
+  display: flex;
+  align-items: center;
+  height: 1.2em;
+  white-space: nowrap;
+}
+
 .site-nav {
   display: flex;
   justify-content: center;
@@ -609,12 +628,12 @@ pre code {
   --pagefind-ui-font: var(--font-body);
 }
 
-.search-fallback {
-  margin: 0;
+.article-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--baseline);
   border: var(--hairline);
-  padding: 1rem 1.25rem;
-  color: var(--color-muted);
-  background: var(--color-surface);
 }
 
 .article-image {

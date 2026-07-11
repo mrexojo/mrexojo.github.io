@@ -81,7 +81,12 @@ const isActive = (href: string) => {
     <header class="site-header">
       <a class="brand" href={withBase('/')} aria-label={`Home of ${siteName}`}>
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>{siteName}</span>
+        <span class="brand-name" aria-hidden="true">
+          <span class="brand-name-track" data-brand-track>
+            <span class="brand-name-text">{siteName}</span>
+            <span class="brand-name-text">Mr.Exojo</span>
+          </span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         {
@@ -124,6 +129,17 @@ const isActive = (href: string) => {
         document.documentElement.dataset.theme = next;
         localStorage.setItem('theme', next);
       });
+    </script>
+
+    <script>
+      const brandTrack = document.querySelector('[data-brand-track]');
+      if (brandTrack instanceof HTMLElement) {
+        let showShort = false;
+        setInterval(() => {
+          showShort = !showShort;
+          brandTrack.style.transform = showShort ? 'translateY(-1.2em)' : 'translateY(0)';
+        }, 6000);
+      }
     </script>
 
     <script define:vars={{ calendarUrl: CONTACT.calendarUrl }}>
