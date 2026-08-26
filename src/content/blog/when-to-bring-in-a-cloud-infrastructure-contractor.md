@@ -1,12 +1,12 @@
 ---
 title: "When to Bring In a Cloud Infrastructure Contractor — and When Not To"
-publishDate: 2026-06-15
+publishDate: 2026-09-01
 tags:
   - contracting
   - engineering-management
   - cloud
 description: "A build-vs-borrow framework for engineering leaders: which infrastructure work justifies external senior capacity, what it should cost relative to hiring, and the three signs you are about to buy the wrong thing."
-draft: false
+draft: true
 ---
 
 Somewhere in your planning cycle, a piece of infrastructure work is stuck: the migration nobody has bandwidth for, the CI/CD rebuild that keeps slipping quarters, the cloud bill review everyone agrees should happen. The default responses — "we'll hire for it" and "the team will get to it" — both have a failure rate that rarely gets examined. Hiring a senior platform engineer in Europe currently takes three to six months from opening the role to productive work. "The team will get to it" is often a polite way of scheduling the work for never.

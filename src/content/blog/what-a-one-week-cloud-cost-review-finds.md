@@ -1,12 +1,12 @@
 ---
 title: "What a One-Week Cloud Cost Review Actually Finds"
-publishDate: 2026-06-22
+publishDate: 2026-09-08
 tags:
   - finops
   - cost-optimization
   - cloud
 description: "The typical findings of a short, structured cloud cost review — idle spend, mis-sized capacity, wrong service tiers — what each is worth, and why the durable savings come from process, not deletion."
-draft: false
+draft: true
 ---
 
 Cloud cost reviews have a credibility problem, and it is earned. The market is full of dashboards that restate your bill in prettier colors, and consultants whose recommendation is a subscription to more consulting. So let me be concrete about what a short, structured review — one to two weeks, one engineer, read access — actually finds in practice, what each finding is typically worth, and where the limits are.

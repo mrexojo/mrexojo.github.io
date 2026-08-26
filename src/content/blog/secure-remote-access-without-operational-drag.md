@@ -1,12 +1,12 @@
 ---
 title: "Secure Remote Access Without Operational Drag"
-publishDate: 2026-07-08
+publishDate: 2026-11-10
 tags:
   - security
   - remote-work
   - operations
 description: "How engineering leaders should structure infrastructure access for distributed teams: identity-first design, the audit trail you will eventually need, and why unusable security becomes no security."
-draft: false
+draft: true
 ---
 
 Every distributed engineering organization has an access story it is not proud of: the shared SSH key that has outlived three employees, the VPN account nobody remembers issuing, the database exposed "temporarily" for a contractor two years ago. Remote access is where security policy meets daily engineering reality, and when the two conflict, reality wins — engineers will find a way to do their jobs, and the workaround they find will be worse than anything you would have designed.

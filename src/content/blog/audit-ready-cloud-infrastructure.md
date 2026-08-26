@@ -1,12 +1,12 @@
 ---
 title: "Audit-Ready Cloud Infrastructure Without the Pre-Audit Panic"
-publishDate: 2026-06-29
+publishDate: 2026-09-15
 tags:
   - compliance
   - devsecops
   - security
 description: "How engineering organizations facing ISO 27001, SOC 2, NIS2, or DORA can make audit evidence a byproduct of normal operations — and why infrastructure as code is the cheapest compliance tool you already own."
-draft: false
+draft: true
 ---
 
 There is a moment familiar to every engineering leader in a regulated or enterprise-selling company: the audit is scheduled, the evidence request list arrives, and the organization discovers that proving what it does costs more than doing it. Screenshots are taken, spreadsheets of access grants are reconstructed from memory, and for six weeks the platform team becomes a documentation team. Then it ends, everyone exhales, and nothing changes until next year.

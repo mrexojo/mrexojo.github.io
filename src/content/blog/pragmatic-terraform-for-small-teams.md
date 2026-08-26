@@ -1,12 +1,12 @@
 ---
 title: "Pragmatic Terraform for Teams of 5 to 50 Engineers"
-publishDate: 2026-07-07
+publishDate: 2026-11-03
 tags:
   - terraform
   - infrastructure-as-code
   - engineering-management
 description: "How to adopt Infrastructure as Code without turning it into a second product your team has to maintain. Sequencing, module discipline, and the failure modes to avoid."
-draft: false
+draft: true
 ---
 
 If you lead an engineering organization of five to fifty engineers, Terraform is probably already in your stack — or on the roadmap because someone said "we should have Infrastructure as Code." The question worth your attention is not whether to adopt it. It is how much of it to adopt, in what order, and what it will cost your team to maintain.
