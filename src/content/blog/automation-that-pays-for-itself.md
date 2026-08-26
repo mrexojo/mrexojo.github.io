@@ -1,12 +1,12 @@
 ---
 title: "Infrastructure Automation That Pays for Itself"
-publishDate: 2026-07-09
+publishDate: 2026-11-24
 tags:
   - automation
   - engineering-management
   - operations
 description: "A decision framework for engineering leaders: which infrastructure automation delivers measurable return, which creates maintenance debt, and how to tell before you build it."
-draft: false
+draft: true
 ---
 
 Every engineering leader has approved an automation project that quietly became a liability: the deployment script only one person understands, the internal tool that needs more care than the task it replaced, the "self-service" platform the team routes around. Automation is not free. It converts recurring manual effort into a smaller recurring maintenance cost plus a one-time build cost — and that trade only pays off under specific conditions.

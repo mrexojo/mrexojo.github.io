@@ -1,6 +1,6 @@
 ---
 title: "Observability That Earns Its Cost"
-publishDate: 2026-05-25
+publishDate: 2026-07-21
 tags:
   - observability
   - sre

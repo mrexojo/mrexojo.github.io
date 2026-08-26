@@ -1,12 +1,12 @@
 ---
 title: "Integrating an External Infrastructure Engineer Without Friction"
-publishDate: 2026-07-10
+publishDate: 2026-12-08
 tags:
   - contracting
   - engineering-management
   - collaboration
 description: "What separates contractor engagements that compound value from those that create dependency: context, boundaries, documentation, and the handover test. Written by the contractor."
-draft: false
+draft: true
 ---
 
 Bringing an external engineer into infrastructure work is a different transaction from hiring. You are buying a bounded outcome — a migration completed, a pipeline stabilized, a cost problem solved — and the engagement succeeds or fails on things that have little to do with the contractor's technical skill: how fast they absorb context, how clearly the boundaries are drawn, and what remains when they leave.

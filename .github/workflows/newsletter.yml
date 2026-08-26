@@ -1,0 +1,35 @@
+name: Newsletter
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/content/blog/**/*.md'
+      - 'src/content/blog/**/*.mdx'
+  workflow_dispatch: # Botón manual de emergencia en GitHub UI
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # al menos 2 commits para compararlos y ver qué es nuevo
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Instalamos las dependencias necesarias solo para este script
+      # 'marked' nos sirve para convertir el Markdown a HTML en el email
+      - name: Instalar dependencias del script
+        run: npm install resend gray-matter marked
+
+      - name: Procesar nuevos posts y enviar
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+        run: node scripts/send-newsletter.js
