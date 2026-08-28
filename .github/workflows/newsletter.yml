@@ -31,5 +31,7 @@ jobs:
       - name: Procesar nuevos posts y enviar
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          NEWSLETTER_FROM: ${{ secrets.NEWSLETTER_FROM }}
+          NEWSLETTER_TO: ${{ secrets.NEWSLETTER_TO }}
+          NEWSLETTER_AUDIENCE_ID: ${{ secrets.NEWSLETTER_AUDIENCE_ID }}
         run: node scripts/send-newsletter.js
