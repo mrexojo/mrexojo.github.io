@@ -6,7 +6,7 @@ tags:
   - remote-work
   - engineering-management
 description: "For engineering leaders in DACH, the Netherlands, the UK, and the Nordics: the contractual, security, and practical mechanics of engaging a remote B2B contractor from another European country — demystified."
-draft: true
+draft: false
 ---
 
 European engineering organizations hire remote contractors across borders every day, yet each first-time buyer rediscovers the same anxieties: How does invoicing work? What about IR35, or the German *Scheinselbstständigkeit* rules? Can we give an external person production access and survive our next audit? Is a contractor two time zones away actually workable?

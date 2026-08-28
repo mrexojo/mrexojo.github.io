@@ -6,7 +6,7 @@ tags:
   - cloud
   - engineering-management
 description: "EKS, GKE, or AKS — or none of them. How to decide whether managed Kubernetes fits your organization, what it really costs to operate, and the simpler alternatives that are often the right answer."
-draft: true
+draft: false
 ---
 
 Kubernetes has reached the stage of adoption where the pressure to use it is social as much as technical: candidates expect it, architects propose it by default, and "we run on Kubernetes" reads as engineering credibility. That is precisely when a technology gets adopted by organizations it does not fit. If you lead engineering at a company of twenty to a few hundred people, the Kubernetes question deserves an actual decision, not a default — in either direction.
