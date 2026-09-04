@@ -1,0 +1,78 @@
+name: Publish Scheduled Posts
+
+on:
+  schedule:
+    # 08:00 Europe/Madrid with DST shift (CEST=06:00 UTC, CET=07:00 UTC)
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
+  workflow_dispatch: # permite publicación manual desde GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Publish due posts from calendar
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          now_hour="$(TZ=Europe/Madrid date +%H)"
+          if [ "$now_hour" != "08" ] && [ "${GITHUB_EVENT_NAME:-}" != "workflow_dispatch" ]; then
+            echo "No es 08:00 en Europe/Madrid. Salgo."
+            exit 0
+          fi
+
+          today="$(TZ=Europe/Madrid date +%F)"
+
+          # Publica TODOS los posts cuya fecha de calendar.md sea <= hoy
+          # (antes solo coincidencia exacta: los vencidos se quedaban atascados para siempre)
+          mapfile -t titles < <(
+            awk -F'|' -v target="$today" '
+              /^\| [0-9]+ \|/ {
+                date=$3
+                title=$4
+                gsub(/^[[:space:]]+|[[:space:]]+$/, "", date)
+                gsub(/^[[:space:]]+|[[:space:]]+$/, "", title)
+                if (date != "" && date <= target) print title
+              }
+            ' calendar.md
+          )
+
+          if [ "${#titles[@]}" -eq 0 ]; then
+            echo "Sin posts vencidos para $today."
+            exit 0
+          fi
+
+          changed=0
+          for title in "${titles[@]}"; do
+            for file in src/content/blog/*.md src/content/blog/*.mdx; do
+              [ -f "$file" ] || continue
+              file_title="$(sed -n 's/^title: "\(.*\)"/\1/p' "$file" | head -n1)"
+              if [ "$file_title" = "$title" ]; then
+                if grep -q '^draft: true$' "$file"; then
+                  sed -i 's/^draft: true$/draft: false/' "$file"
+                  echo "Publicado: $title ($file)"
+                  changed=1
+                else
+                  echo "Ya publicado: $title ($file)"
+                fi
+              fi
+            done
+          done
+
+          if [ "$changed" -eq 0 ]; then
+            echo "Sin cambios para commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog
+          git commit -m "chore(blog): publish due posts up to $today"
+          git push
