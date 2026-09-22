@@ -7,7 +7,7 @@ tags:
   - sre
   - containers
 description: "CLI, dockerd, containerd, runc, and the kernel primitives underneath — namespaces and cgroups. Why the layered anatomy matters operationally, what each layer owns, and where incidents actually live. A back-to-fundamentals piece."
-draft: true
+draft: false
 ---
 
 Unlike the news-driven pieces in this series, this one is fundamentals — and it is the article I find myself whiteboarding most often for teams. Everyone uses Docker; a surprising share of engineers who operate containers in production cannot say what actually happens after they press enter on `docker run`. That gap is invisible until an incident lives below the layer they know, and then it is the whole incident.
