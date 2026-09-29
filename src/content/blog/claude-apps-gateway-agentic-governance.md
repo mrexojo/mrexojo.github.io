@@ -7,7 +7,7 @@ tags:
   - cloud-networking
   - finops
 description: "Anthropic's gateway component for Bedrock and Google Cloud centralizes network policy, RBAC, and cost control for agent traffic — a corporate firewall for AI. Why the category needed to exist, what centralizing buys and risks, and an opinion on adoption timing."
-draft: true
+draft: false
 ---
 
 Disclosure, as always in this series: analysis, not a deployment report — the component is too new for anyone's production retrospective, mine included. But the *category* it inaugurates is one infrastructure people have seen before under other names, and pattern-matching it correctly is most of the evaluation.
