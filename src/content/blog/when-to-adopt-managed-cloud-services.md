@@ -6,7 +6,7 @@ tags:
   - engineering-management
   - cost-optimization
 description: "Decision criteria for CTOs weighing managed databases, Kubernetes, and serverless against self-operated infrastructure: the real cost comparison, the migration signals, and the lock-in question answered honestly."
-draft: true
+draft: false
 ---
 
 "Should we run it ourselves or pay for the managed service?" is one of the few infrastructure questions that reaches CTO level in almost every company — because it is not really a technology question. It is a question about where your engineers' time goes, what your tolerance for operational risk is, and what a 3 a.m. incident actually costs you.
