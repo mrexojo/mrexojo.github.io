@@ -1,7 +1,7 @@
 ---
 title: "Fifteen CI/CD and Kubernetes Questions Worth Sitting With"
 description: "Not questions with a single correct answer, but ones where working through them honestly says more than reciting the textbook definition. How I currently think about each — not the final word on any of them."
-pubDate: 2026-09-17
+publishDate: 2026-09-17
 tags: ["sre", "kubernetes", "devsecops"]
 draft: true
 ---

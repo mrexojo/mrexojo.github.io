@@ -1,7 +1,7 @@
 ---
 title: "The Paved Road Now Has to Include Security (And Someone Still Has to Own It)"
 description: "Internal developer platforms promise a golden path from idea to production API. Increasingly, security and compliance are expected to ride along by default — which is a good idea that quietly depends on someone actually maintaining the road."
-pubDate: 2026-09-24
+publishDate: 2026-09-24
 tags: ["devsecops", "engineering-management", "compliance"]
 draft: true
 ---

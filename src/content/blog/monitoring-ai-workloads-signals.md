@@ -1,7 +1,7 @@
 ---
 title: "Monitoring AI Workloads: The Signals We Already Know, and the Ones We're Still Figuring Out"
 description: "LLMs, agents, and inference services are production workloads now, which means someone owns their reliability. The old signals still matter — they're just not enough on their own, and the new ones don't have settled answers yet."
-pubDate: 2026-09-17
+publishDate: 2026-09-17
 tags: ["observability", "sre"]
 draft: true
 ---

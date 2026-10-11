@@ -1,7 +1,7 @@
 ---
 title: "AI Can Suggest the Rollback. Deciding Still Belongs to Someone."
 description: "AI is genuinely useful at correlating signals during an incident. What it recommends and what actually gets executed without a human in the loop are two different questions — and cost has quietly become part of the reliability conversation too."
-pubDate: 2026-10-01
+publishDate: 2026-10-01
 tags: ["sre", "finops", "cost-optimization"]
 draft: true
 ---
