@@ -6,7 +6,7 @@ tags:
   - continuity
   - cloud
 description: "Why 'we have backups' is not an answer to a continuity question, and how engineering leaders should structure — and test — recovery before an incident or an audit forces the issue."
-draft: true
+draft: false
 ---
 
 At some point a board member, a large customer, or an auditor will ask your organization a simple question: "If your primary systems were lost today, how long until you are operating again?" The answer "we have backups" does not answer it. Backups, replication, and validated recovery are three different capabilities with three different costs, and conflating them is how companies discover — mid-incident — that they bought the wrong one.
