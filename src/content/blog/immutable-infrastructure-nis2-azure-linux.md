@@ -7,7 +7,7 @@ tags:
   - azure
   - linux
 description: "Azure Linux 4.0-style minimal hosts — no GUI, SELinux enforcing by default, atomic rollbacks — are becoming the compliance-friendly default for container fleets. The operational and regulatory case, the migration friction nobody advertises, and an opinion on timing."
-draft: true
+draft: false
 ---
 
 Framing disclosure: this is an assessment of a direction, not a migration report. But the direction — minimal, immutable, hardened container hosts as the enterprise default, with Azure Linux 4.0 as the current flag-bearer — sits at the intersection of two things I have lived with for years: Linux hardening (the LPIC-3 half of my career) and the compliance pressure European engineering teams now operate under. The argument deserves to be made plainly, including its costs.
