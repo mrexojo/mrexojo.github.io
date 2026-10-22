@@ -1,19 +1,27 @@
 // Site-wide settings. Edit this file to rebrand the theme — every page,
 // the RSS feed, and Open Graph tags read from here.
 
+export const AI_CREDENTIAL = {
+  name: 'NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO)',
+  shortName: 'NVIDIA NCA-AIIO',
+  year: '2026',
+  programUrl: 'https://www.nvidia.com/en-us/learn/certification/ai-infrastructure-operations-associate/',
+} as const;
+
 export const SITE = {
   /** Site name — used in the header brand, <title>, and og:site_name. */
   title: 'Miguel Ramírez Exojo',
+  homeTitle: 'Cloud & AI Infrastructure Contractor',
   /** Default meta description for pages that don't set their own. */
   description:
-    'Senior cloud infrastructure contractor. Remote B2B engagements across Europe in AWS, GCP, Azure, Terraform, FinOps, and DevSecOps.',
+    'Cloud and AI infrastructure contractor in Spain. Remote B2B delivery across Europe: AWS, GCP, Azure, Terraform, FinOps and DevSecOps. NVIDIA NCA-AIIO certified.',
   /** Description of the RSS feed at /rss.xml. */
   rssDescription:
-    'Articles for engineering leaders on cloud infrastructure decisions: architecture, migration, automation, cost, and delivery.',
+    'Articles for engineering teams on cloud and AI infrastructure, architecture, automation, FinOps and DevSecOps.',
   /** Default social share image, relative to the site root (see public/). */
   ogImage: '/og.jpg',
   /** Footer credit line. */
-  footerText: 'Senior cloud infrastructure contractor — remote across Europe.',
+  footerText: 'Cloud, AI infrastructure & DevSecOps — remote B2B from Spain.',
 } as const;
 
 /** Header navigation. `href` is relative to the site root; the configured
@@ -22,7 +30,7 @@ export const NAV_ITEMS = [
   { href: '/', label: 'Home' },
   { href: '/works/', label: 'Services' },
   { href: '/#experience', label: 'Experience' },
-  { href: '/blog/', label: 'Vision' },
+  { href: '/blog/', label: 'Articles' },
   { href: '/#contact', label: 'Contact' },
 ] as const;
 
@@ -46,7 +54,7 @@ export const EXPERIENCE = [
     company: 'mrexojo.com · B2B Contractor',
     role: 'Freelance Cloud & DevSecOps Engineer',
     description:
-      'Remote engagements for Orange Bank, SantaLucía, and Jefferson Frank IT Consulting: DevSecOps pipelines, FinOps cost control, and AI infrastructure operations.',
+      'Remote engagements for Orange Bank, SantaLucía, and Jefferson Frank IT Consulting: DevSecOps pipelines, delivery automation, and FinOps cost control.',
     stack: ['Terraform', 'GitHub Actions', 'AWS', 'Azure', 'FinOps'],
   },
   {
@@ -54,7 +62,7 @@ export const EXPERIENCE = [
     company: 'Copado (US)',
     role: 'Cloud Infrastructure Engineer',
     description:
-      'Custom Terraform modules for a Salesforce DevOps platform on GKE; observability (Sumo Logic, Prometheus) sustaining 98% uptime across a team spanning US, India, and Europe.',
+      'Custom Terraform modules for a Salesforce DevOps platform on GKE; observability (Sumo Logic, Prometheus) for a team spanning US, India, and Europe.',
     stack: ['GKE', 'Terraform', 'GitLab CI', 'HashiCorp Vault'],
   },
   {
@@ -85,7 +93,7 @@ export const EXPERIENCE = [
 
 /** Certifications, most recent first. Source: src/content/cv/cv.pdf. */
 export const CERTIFICATIONS = [
-  { name: 'NVIDIA NCA-AIIO — AI Infrastructure and Operations', year: '2026' },
+  { name: AI_CREDENTIAL.name, year: AI_CREDENTIAL.year },
   { name: 'Google Cloud Certified Engineer (Renewed)', year: '2025' },
   { name: 'AWS Solutions Architect Associate', year: '2023' },
   { name: 'FinOps Certified Practitioner (FOCP)', year: '2023' },

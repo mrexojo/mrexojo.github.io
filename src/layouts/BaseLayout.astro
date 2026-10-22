@@ -7,13 +7,14 @@ import '@fontsource/public-sans/700.css';
 import '@fontsource-variable/jetbrains-mono/wght.css';
 import '../styles/global.css';
 import { withBase } from '../lib/url';
-import { SITE, NAV_ITEMS, CONTACT, SOCIAL_LINKS } from '../consts';
+import { SITE, NAV_ITEMS, CONTACT, SOCIAL_LINKS, AI_CREDENTIAL } from '../consts';
 
 interface Props {
   title?: string;
   description?: string;
   ogType?: 'website' | 'article';
   image?: string;
+  structuredData?: Record<string, unknown>;
 }
 
 const siteName = SITE.title;
@@ -23,6 +24,7 @@ const {
   description = SITE.description,
   ogType = 'website',
   image,
+  structuredData,
 } = Astro.props;
 
 // `Astro.site` comes from `site` in astro.config.mjs; fall back to the
@@ -31,6 +33,31 @@ const siteBase = Astro.site ?? new URL(Astro.url.origin);
 const canonicalURL = new URL(Astro.url.pathname, siteBase);
 const imageURL = image ? new URL(image, siteBase) : new URL(withBase(SITE.ogImage), siteBase);
 const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
+const personId = new URL('/#person', siteBase).href;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person', '@id': personId, name: siteName,
+      url: new URL('/#experience', siteBase).href,
+      jobTitle: 'Cloud and DevSecOps Contractor',
+      description: SITE.description,
+      sameAs: SOCIAL_LINKS.map((social) => social.href),
+      knowsAbout: ['Cloud infrastructure', 'AI infrastructure', 'DevSecOps', 'Terraform', 'FinOps'],
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential', name: AI_CREDENTIAL.name,
+        credentialCategory: 'Certification',
+        recognizedBy: { '@type': 'Organization', name: 'NVIDIA', url: 'https://www.nvidia.com/' },
+      },
+    },
+    {
+      '@type': 'WebSite', '@id': new URL('/#website', siteBase).href,
+      name: siteName, url: new URL('/', siteBase).href,
+      description: SITE.description, inLanguage: 'en', author: { '@id': personId },
+    },
+    ...(structuredData ? [structuredData] : []),
+  ],
+};
 
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) => {
@@ -45,6 +72,8 @@ const isActive = (href: string) => {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="author" content={siteName} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="icon" href={withBase('/favicon.ico')} />
@@ -67,10 +96,6 @@ const isActive = (href: string) => {
     <meta name="twitter:description" content={description} />
     {imageURL && <meta name="twitter:image" content={imageURL} />}
 
-    <!-- Google Calendar scheduling button (loaded site-wide for header/contact) -->
-    <link rel="stylesheet" href="https://calendar.google.com/calendar/scheduling-button-script.css">
-    <script async src="https://calendar.google.com/calendar/scheduling-button-script.js"></script>
-
     <script is:inline>
       const storedTheme = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -81,12 +106,7 @@ const isActive = (href: string) => {
     <header class="site-header">
       <a class="brand" href={withBase('/')} aria-label={`Home of ${siteName}`}>
         <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name" aria-hidden="true">
-          <span class="brand-name-track" data-brand-track>
-            <span class="brand-name-text">{siteName}</span>
-            <span class="brand-name-text">Mr.Exojo</span>
-          </span>
-        </span>
+        <span class="brand-name" aria-hidden="true"><span class="brand-full">{siteName}</span><span class="brand-short">mrexojo</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         {
@@ -98,7 +118,7 @@ const isActive = (href: string) => {
         }
       </nav>
       <div class="header-actions">
-        <button class="button" type="button" aria-label="Book a call" data-book-call></button>
+        <a class="button" href={CONTACT.calendarUrl} target="_blank" rel="noopener noreferrer">Book a call</a>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
           <span aria-hidden="true"></span>
         </button>
@@ -131,34 +151,6 @@ const isActive = (href: string) => {
       });
     </script>
 
-    <script>
-      const brandTrack = document.querySelector('[data-brand-track]');
-      if (brandTrack instanceof HTMLElement) {
-        let showShort = false;
-        setInterval(() => {
-          showShort = !showShort;
-          brandTrack.style.transform = showShort ? 'translateY(-1.2em)' : 'translateY(0)';
-        }, 6000);
-      }
-    </script>
 
-    <script define:vars={{ calendarUrl: CONTACT.calendarUrl }}>
-      // Mounts the Google Calendar scheduling widget into every [data-book-call]
-      // element on the page (header button, contact section, etc).
-      window.addEventListener('load', () => {
-        const targets = document.querySelectorAll('[data-book-call]');
-        // @ts-expect-error - injected by the Google Calendar script
-        if (!targets.length || !window.calendar?.schedulingButton?.load) return;
-        targets.forEach((target) => {
-          // @ts-expect-error - injected by the Google Calendar script
-          calendar.schedulingButton.load({
-            url: calendarUrl,
-            color: '#B14A31', // matches --color-accent (light theme)
-            label: 'Book a call',
-            target,
-          });
-        });
-      });
-    </script>
   </body>
 </html>

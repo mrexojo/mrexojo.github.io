@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-    <path d="M19.35 10.04A7.49 7.49 0 0 0 12 4a7.5 7.5 0 0 0-7.35 6.04A5.99 5.99 0 0 0 6 22h13a5 5 0 0 0 .35-11.96Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#a8492c"/><path d="M12 43V22h6v3c2-3 7-4 10 0 4-5 12-4 12 4v14h-6V30c0-5-5-4-5 0v13h-6V30c0-5-5-4-5 0v13Z" fill="#fcfcfa"/><path d="M43 43h10v4H43Z" fill="#fcfcfa"/></svg>

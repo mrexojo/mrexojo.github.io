@@ -36,22 +36,19 @@ const formatDate = (date: Date) =>
     year: 'numeric',
   }).format(date);
 
-const pageTitle = page.currentPage === 1 ? 'Blog' : `Blog · Page ${page.currentPage}`;
+const pageTitle = page.currentPage === 1 ? 'Cloud & AI Infrastructure Articles' : `Cloud & AI Articles · Page ${page.currentPage}`;
 ---
 
 <BaseLayout
   title={pageTitle}
-  description="Articles on cloud, automation, continuity and infrastructure."
+  description="Articles by Miguel Ramírez Exojo on cloud and AI infrastructure, automation, FinOps, DevSecOps and operations."
 >
   <section class="page-head section">
     <p class="eyebrow">Blog</p>
     <h1>Articles, technical notes and applied learning.</h1>
     <p class="lead">
-      I write for CTOs, cloud directors, and engineering managers about infrastructure
-      decisions: optimizing AI infrastructure, hardening the kernel under your clusters,
-      and cutting GPU orchestration spend take focus and senior hands-on experience.
-      If your engineering team is stretched integrating these pieces, I provide
-      immediate external senior capacity — <a href={withBase('/#contact')}>let's talk</a>.
+      Technical notes on cloud and AI infrastructure, automation and operations.
+      Trade-offs, failure modes and checks to make before committing engineering time or budget.
     </p>
   </section>
 

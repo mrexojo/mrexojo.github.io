@@ -1,6 +1,6 @@
 ---
 title: "Cloud Architecture Review and Migration"
-description: "Independent senior review of cloud architecture decisions, and hands-on delivery of migrations across AWS, GCP, and Azure."
+description: "Cloud architecture reviews and migrations across AWS, GCP and Azure, with readiness reviews for teams preparing AI infrastructure."
 tech:
   - AWS
   - GCP
@@ -33,3 +33,11 @@ For migrations, I have delivered this work end to end: moving workloads between 
 ## Who this is for
 
 CTOs and heads of platform who need a senior second opinion before committing budget, or a contractor who can execute a migration without pulling the internal team off the roadmap. Certified: AWS Solutions Architect, AWS Security Specialty, Google Cloud Engineer.
+
+## AI infrastructure readiness
+
+For teams preparing AI workloads, I can scope an infrastructure readiness review covering compute and GPU requirements, storage, networking, access controls, observability and cost. The deliverable is a written assessment with priorities, constraints and next steps before implementation.
+
+This extends my cloud and platform work into AI infrastructure and operations, backed by the NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) certification. Implementation scope is agreed separately after the review.
+
+[NVIDIA NCA-AIIO certification programme](https://www.nvidia.com/en-us/learn/certification/ai-infrastructure-operations-associate/)
