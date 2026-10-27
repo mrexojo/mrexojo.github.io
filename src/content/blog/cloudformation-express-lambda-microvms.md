@@ -7,7 +7,7 @@ tags:
   - aws
   - security
 description: "AWS promises 4x faster stack operations and hypervisor-level microVM isolation for dynamic code. An opinion on what each actually changes, who should care, and the fine print — because deployment speed and code isolation are different problems wearing one announcement."
-draft: true
+draft: false
 ---
 
 Honest framing first: I have not run these capabilities through months of production duty — nobody outside early adopters has. But both land on ground I know well: IaC pipelines whose slowness I have suffered, and workload isolation, which the industry suddenly cares about again now that AI systems generate and execute code at runtime. This is an analysis of what the announcement changes, and what it only appears to change.
