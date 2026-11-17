@@ -7,7 +7,7 @@ tags:
   - cloud-storage
   - ai-infrastructure
 description: "Proposals like Omnigraph put Git-style structured graphs on S3 as shared memory for agent clusters. An architectural opinion: the concurrency problem is real, the approach is elegant, and the operational bill deserves more attention than the papers give it."
-draft: true
+draft: false
 ---
 
 Position stated up front: this is an architectural analysis of an emerging pattern, not a report from production. Shared graph memories for multi-agent systems — the Omnigraph-style proposals layering versioned, Git-like graph structures over Amazon S3 — are at the stage where the ideas are published and the scars are not. That is precisely the right moment for an opinionated read, because architecture chosen now is what teams will be operating in two years.
